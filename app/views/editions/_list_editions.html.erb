@@ -4,9 +4,11 @@
       <th>Edition</th>
     </tr>
   </thead>
-  <% editions.each do |edition| %>
+  <% editions.select(&:path).each do |edition| %>
     <tr>
-      <td><%= link_to edition.path, edition %></td>
+      <td>
+        <%= link_to edition.path, edition_path(path: edition.path) %>
+      </td>
     <tr>
   <% end %>
 </table>
