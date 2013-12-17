@@ -2,6 +2,7 @@ class EditionsController < ApplicationController
 
   def index
     @editions = Edition.all
+    @editions = @editions.select(&:path)
   end
 
   def new

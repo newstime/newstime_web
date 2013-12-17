@@ -4,7 +4,7 @@
       <th>Edition</th>
     </tr>
   </thead>
-  <% editions.select(&:path).each do |edition| %>
+  <% editions.each do |edition| %>
     <tr>
       <td>
         <%= link_to edition.path, edition_path(path: edition.path) %>
