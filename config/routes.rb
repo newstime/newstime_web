@@ -1,4 +1,4 @@
-Press::Application.routes.draw do
+Newsstand::Application.routes.draw do
 
   root to: "pages#home"
 

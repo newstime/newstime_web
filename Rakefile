@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Press::Application.load_tasks
+Newsstand::Application.load_tasks
