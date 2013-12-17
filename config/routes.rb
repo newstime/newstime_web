@@ -18,10 +18,10 @@ Newsstand::Application.routes.draw do
     post '/' => :create
   end
 
-  #scope '/store', module: 'newsstand' do
-    #get '/' => :index, as: :store
-    #get "/*path" => "store_items#show"
-  #end
+  scope '/store', controller: 'store_items' do
+    get '/' => :index, as: :store_items
+    get "/*path" => :show
+  end
 
   match "*a", :to => "application#routing_error", via: [:get, :post]
 

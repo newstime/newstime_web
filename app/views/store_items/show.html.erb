@@ -1,0 +1,12 @@
+<div class="container">
+  <h2>Newstand</h2>
+
+  <% if true # If they bought %>
+    <a href="/editions/2013/12/17/15.html">Read Now</a>
+    or
+    <a href="/editions/2013/12/15.zip">Download</a>
+  <% else %>
+    <a href="/store/editions/2013/12/15/purchase" method="put">Buy Now</a>
+  <% end %>
+  <%# Assuming Store Item for edition %>
+</div>
