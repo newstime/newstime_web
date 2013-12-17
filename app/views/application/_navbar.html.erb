@@ -10,14 +10,9 @@
       <%= link_to 'Newsstand', root_url, class: 'navbar-brand' %>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <%= navbar_li "Editions", editions_path, active_path: editions_path  %>
-
-        <%#= dropdown_menu "More <b class=\"caret\"></b>" do %>
-          <%#= navbar_li "Attachments", '/attachments' %>
-        <%# end %>
       </ul>
       <%= render 'navbar_right' %>
     </div>
