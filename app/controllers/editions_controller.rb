@@ -19,10 +19,15 @@ class EditionsController < ApplicationController
   end
 
   def show
-    year, month, day, path = params[:path].match(/(\d{4})\/(\d{2})\/(\d{2})\/?(.*)/).try(:captures)
+    #case params[:format]
+    #when 'html'
+      #render status: 403, text: "Access Denied"
+    #else
+      year, month, day, path = params[:path].match(/(\d{4})\/(\d{2})\/(\d{2})\/?(.*)/).try(:captures)
 
-    @edition = Edition.where(path: "#{year}/#{month}/#{day}").first
-    send_file "share/editions/#{@edition.path}/#{path}.#{params[:format]}", type: 'text/html', disposition: 'inline'
+      @edition = Edition.where(path: "#{year}/#{month}/#{day}").first
+      send_file "share/editions/#{@edition.path}/#{path}.#{params[:format]}", type: 'text/html', disposition: 'inline'
+    #end
   end
 
   private
