@@ -1,12 +1,12 @@
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th>Editions</th>
+      <th>Edition</th>
     </tr>
   </thead>
   <% editions.each do |edition| %>
     <tr>
-      <td><%= link_to edition.name, edition %></td>
+      <td><%= link_to edition.path, edition %></td>
     <tr>
   <% end %>
 </table>

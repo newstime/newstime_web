@@ -24,7 +24,7 @@ class EditionsController < ApplicationController
   private
 
   def edition_params
-    params.require(:edition).permit(:name)
+    params.require(:edition).permit(:name, :path, :cover)
   end
 
 end
