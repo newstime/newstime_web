@@ -12,8 +12,8 @@ Press::Application.routes.draw do
     get '/' => :index, as: :editions
     get '/new' => :new, as: :new_edition
 
-    get '/:id' => :show, as: :edition
-    #get "/*path" => "editions#show"
+    #get '/:id' => :show, as: :edition
+    get "/*path" => "editions#show", as: :edition
 
     post '/' => :create
   end

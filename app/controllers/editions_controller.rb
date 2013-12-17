@@ -18,8 +18,8 @@ class EditionsController < ApplicationController
   end
 
   def show
-    @edition = Edition.find(params[:id])
-    send_file "share/editions#{@edition.path}/index.html", type: 'text/html', disposition: 'inline'
+    @edition = Edition.where(path: params[:path]).first
+    send_file "share/editions/#{@edition.path}/index.html", type: 'text/html', disposition: 'inline'
   end
 
   private
