@@ -1,1 +1,8 @@
-<%= @publication.name %>
+<div class="container">
+  <h1><%= @publication.name %></h1>
+
+  <% @publication.editions.each do |edition| %>
+    Edition
+  <% end %>
+
+</div>

@@ -4,4 +4,6 @@ class Publication
 
   field :name, type: String
   field :slug, type: String
+
+  has_many :editions, inverse_of: :publication
 end
