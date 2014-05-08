@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def home
-    @latest_edition = Edition.last
+    @publications = Publication.all
   end
 end

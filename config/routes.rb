@@ -23,8 +23,10 @@ Newsstand::Application.routes.draw do
     get "/*path" => :show
   end
 
-  scope ":publication_slug" do
+  scope "pub/:publication_slug" do
     get '/' => 'publications#index'
+    get ':edition_slug' => 'publications#show'
+    get ':edition_slug/*path' => 'publications#browse'
   end
 
 

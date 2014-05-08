@@ -1,4 +1,5 @@
 <div class="container">
-  <h1>Last Edition</h1>
-  <%= link_to @latest_edition.path, edition_path(path: @latest_edition.path + '/15.html') %>
+  <% @publications.each do |publication| %>
+    <a href="pub/<%= publication.slug %>/"><%= publication.name %></a>
+  <% end -%>
 </div>
