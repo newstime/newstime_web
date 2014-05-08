@@ -1,4 +1,7 @@
 class PublicationsController < ApplicationController
+
+  before_filter :force_trailing_slash, only: ['index', 'show']
+
   def index
     @publication = Publication.find_by(slug: params[:publication_slug])
   end
