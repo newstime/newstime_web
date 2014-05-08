@@ -23,6 +23,11 @@ Newsstand::Application.routes.draw do
     get "/*path" => :show
   end
 
+  scope ":publication_slug" do
+    get '/' => 'publications#index'
+  end
+
+
   match "*a", :to => "application#routing_error", via: [:get, :post]
 
 end
