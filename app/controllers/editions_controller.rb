@@ -41,11 +41,12 @@ class EditionsController < ApplicationController
     @publication = Publication.find_by(slug: params[:publication_slug])
 
     # Prevent posgting the same edition twice.
-    raise "Edition already exists." if @publication.editions.where(slug: Edition.slugify(edition_params[:name])).exists?
+    raise "Edition already exists." if @publication.editions.where(slug: params[:edition_slug]).exists?
 
     @edition = Edition.new(edition_params)
     @edition.publication = @publication
     @edition.zip_name = zip.original_filename # Copy zip name to the edition.
+    @edition.slug = params[:edition_slug]
 
     @edition.ensure_share_path!
     File.open(@edition.zip_share_path, 'wb') do |file|

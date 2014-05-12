@@ -2,7 +2,7 @@ class Edition
   include Mongoid::Document
   include Mongoid::Paperclip
 
-  before_save :set_slug
+  #before_save :set_slug
 
   field :name, type: String
   field :slug, type: String
@@ -18,13 +18,13 @@ class Edition
 
   belongs_to :publication, inverse_of: :editions
 
-  def self.slugify(value)
-    value.downcase.gsub(/[ _]/, '-')
-  end
+  #def self.slugify(value)
+    #value.downcase.gsub(/[ _]/, '-')
+  #end
 
-  def set_slug
-    self.slug = self.class.slugify(name)
-  end
+  #def set_slug
+    #self.slug = self.class.slugify(name)
+  #end
 
   # Returns the path to where edition is saved on disk.
   def share_path
