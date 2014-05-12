@@ -7,9 +7,8 @@ class Publication
 
   has_many :editions, inverse_of: :publication
 
-
   def share_path
-    "#{Rails.root}/share/editions/#{slug.underscore}"
+    Rails.root.join('share', 'publications', id.to_s)
   end
 
 end

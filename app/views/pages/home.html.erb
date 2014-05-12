@@ -1,5 +1,5 @@
 <div class="container">
   <% @publications.each do |publication| %>
-    <a href="pub/<%= publication.slug %>/"><%= publication.name %></a>
+    <a href="<%= publication.slug %>/"><%= publication.name %></a>
   <% end -%>
 </div>
