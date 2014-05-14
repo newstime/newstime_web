@@ -1,12 +1,18 @@
 <div class="container">
-  <a href="main.html">
-    <img src="cover.png" width=1000 style="width: 1000px; margin: 0 auto; display: block; box-shadow: 2px 2px 1px #aaa; border-radius: 0 0 10px 10px;"></img>
-  </a>
-  <!-- If Not Purchased -->
-  <input type="button" value="Buy Copy" name="" id=""/>
-  <input type="button" value="Subscribe" name="" id=""/>
+  <div class="edition-display">
+    <a href="main.html">
+      <img src="cover.png" class="cover"></img>
+    </a>
 
-  <!-- If Owned -->
-  <input type="button" value="Download" name="" id=""/>
-  <input type="button" value="Read Now" name="" id=""/>
+    <div class="edition-buttons">
+      <% if @current_user.owns?(@edition) %>
+        <button value="Download" class="cupid-blue" name="" id=""/>
+
+        <input type="button" value="Read Now" name="" id=""/>
+      <% else -%>
+        <button>Buy Copy</button>
+        <button>Subscribe</button>
+      <% end -%>
+    </div>
+  </div>
 </div>

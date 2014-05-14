@@ -9,6 +9,7 @@ class PublicationsController < ApplicationController
   end
 
   def show
+    @current_user = User.new # Mock user for a moment.
     @publication = Publication.find_by(slug: params[:publication_slug])
     @edition = @publication.editions.find_by(slug: params[:edition_slug])
   end

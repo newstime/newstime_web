@@ -1,0 +1,35 @@
+.logo-container {
+  width: 150px;
+  height: 55px;
+  background-color: #484c55;
+  display: block;
+  margin: -10px auto 0;
+  padding: 0 20px;
+  box-shadow: 0 1px 2px #444;
+}
+
+.newstime-logo svg {
+  height: 58px;
+  fill: #ccc;
+  margin: 0 auto;
+}
+
+.top-bar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  margin: 0 auto;
+  max-width: 1170px;
+}
+
+#search {
+  position: absolute;
+  top: 25px;
+  left: 50px;
+  width: 150px;
+  font-size: 12pt;
+  padding: 2pt;
+  transition: width .3s ease-in-out;
+  &:focus {
+    width: 225px;
+  }
+}
