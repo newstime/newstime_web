@@ -35,6 +35,6 @@ class User
   # field :locked_at,       :type => Time
 
   def owns?(edition)
-    false # MOCK implemenation
+    true # MOCK implemenation
   end
 end

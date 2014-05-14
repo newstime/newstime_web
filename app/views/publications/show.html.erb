@@ -6,9 +6,8 @@
 
     <div class="edition-buttons">
       <% if @current_user.owns?(@edition) %>
-        <button value="Download" class="cupid-blue" name="" id=""/>
-
-        <input type="button" value="Read Now" name="" id=""/>
+        <button>Read Now</button>
+        <button>Download</button>
       <% else -%>
         <button>Buy Copy</button>
         <button>Subscribe</button>

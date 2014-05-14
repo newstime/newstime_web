@@ -18,14 +18,6 @@ class Edition
 
   belongs_to :publication, inverse_of: :editions
 
-  #def self.slugify(value)
-    #value.downcase.gsub(/[ _]/, '-')
-  #end
-
-  #def set_slug
-    #self.slug = self.class.slugify(name)
-  #end
-
   # Returns the path to where edition is saved on disk.
   def share_path
     Rails.root.join('share', 'editions', id.to_s)
@@ -39,7 +31,6 @@ class Edition
   def ensure_share_path!
     FileUtils.mkdir_p(share_path) unless share_path.exist?
   end
-
 
   # TODO: Move to decorator...
   def cover_url
