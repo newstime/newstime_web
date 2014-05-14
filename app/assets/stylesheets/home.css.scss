@@ -1,6 +1,26 @@
 body {
 }
 
+.top-bar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  margin: 0 auto;
+  max-width: 1170px;
+}
+
+#search {
+  position: absolute;
+  top: 25px;
+  left: 50px;
+  width: 150px;
+  font-size: 12pt;
+  padding: 2pt;
+  transition: width .3s ease-in-out;
+  &:focus {
+    width: 225px;
+  }
+}
+
 .container {
   max-width: 1170px;
   margin-right: auto;
