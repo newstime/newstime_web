@@ -94,6 +94,10 @@ GEM
     dotenv (0.9.0)
     dotenv-rails (0.9.0)
       dotenv (= 0.9.0)
+    draper (1.2.1)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      request_store (~> 1.0.3)
     erubis (2.7.0)
     execjs (2.0.2)
     expression_parser (0.9.0)
@@ -150,6 +154,7 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     redcarpet (3.0.0)
+    request_store (1.0.5)
     rinku (1.7.3)
     sass (3.2.12)
     sass-rails (4.0.1)
@@ -204,6 +209,7 @@ DEPENDENCIES
   debugger
   devise
   dotenv-rails
+  draper
   jbuilder (~> 1.2)
   jquery-rails
   mongoid (~> 4.0.0.alpha1)!

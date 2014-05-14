@@ -40,4 +40,11 @@ class Edition
     FileUtils.mkdir_p(share_path) unless share_path.exist?
   end
 
+
+  # TODO: Move to decorator...
+  def cover_url
+    "/#{publication.slug}/#{slug}/cover.png"
+  end
+
+
 end

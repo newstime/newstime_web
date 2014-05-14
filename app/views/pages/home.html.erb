@@ -16,34 +16,56 @@
   <br>
   <div class="container">
 
-    <div class="shelf">
+    <div class="shelf clearfix">
       <% @editions.each do |edition| %>
         <div class="edition">
+          <a href="<%= edition.publication.slug %>/<%= edition.slug %>/">
+            <%= image_tag edition.cover_url %>
+          </a>
           <a href="<%= edition.publication.slug %>/<%= edition.slug %>/"><%= edition.name %></a>
         </div>
       <% end -%>
     </div>
 
-    <div class="shelf">
+    <div class="shelf clearfix">
       <% @editions.each do |edition| %>
         <div class="edition">
+          <%= image_tag edition.cover_url %>
           <a href="<%= edition.publication.slug %>/<%= edition.slug %>/"><%= edition.name %></a>
         </div>
       <% end -%>
     </div>
 
-    <div class="shelf">
+    <div class="shelf clearfix">
       <% @editions.each do |edition| %>
         <div class="edition">
+          <%= image_tag edition.cover_url %>
           <a href="<%= edition.publication.slug %>/<%= edition.slug %>/"><%= edition.name %></a>
         </div>
       <% end -%>
     </div>
 
-    <div class="shelf">
+    <div class="shelf clearfix">
       <% @editions.each do |edition| %>
         <div class="edition">
-          <a href="<%= edition.publication.slug %>/<%= edition.slug %>/"><%= edition.name %></a>
+          <%= image_tag edition.cover_url %>
+        </div>
+      <% end -%>
+    </div>
+
+
+    <div class="shelf clearfix">
+      <% @editions.each do |edition| %>
+        <div class="edition">
+          <%= image_tag edition.cover_url %>
+        </div>
+      <% end -%>
+    </div>
+
+    <div class="shelf clearfix">
+      <% @editions.each do |edition| %>
+        <div class="edition">
+          <%= image_tag edition.cover_url %>
         </div>
       <% end -%>
     </div>

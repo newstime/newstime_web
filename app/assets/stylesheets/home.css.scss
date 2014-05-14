@@ -11,15 +11,25 @@ body {
 }
 
 .shelf {
+  margin-bottom: -50px;
+  float: left;
+  margin-left: 22px;
+
   .edition {
     $height: 175px;
     height: $height;
     width: $height * 1.6;
 
-    border: 1px solid gray;
+    img {
+      width: 280px;
+    }
+
+    /*border: 1px solid gray;*/
 
     float: left;
-    margin: 5px;
+
+    background-color: white;
+    box-shadow: 0 -4px 4px #ddd;
   }
 }
 
@@ -29,7 +39,7 @@ body {
   background-color: #484c55;
   display: block;
   margin: -10px auto 0;
-  padding: 0 10px;
+  padding: 0 20px;
   box-shadow: 0 1px 2px #444;
 }
 
@@ -37,4 +47,20 @@ body {
   height: 58px;
   fill: #ccc;
   margin: 0 auto;
+}
+
+
+/* Clearfix */
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.clearfix {
+    display: inline-block;
+}
+.clearfix {
+    display: block;
 }
