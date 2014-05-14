@@ -1,5 +1,23 @@
-<div class="container">
-  <% @publications.each do |publication| %>
-    <a href="<%= publication.slug %>/"><%= publication.name %></a>
-  <% end -%>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Newstime Store</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag "home", media: "all" %>
+</head>
+<body>
+
+  <div class="logo-container">
+    <div class="newstime-logo">
+      <%= render 'newstime_pendulum_logo' %>
+    </div>
+  </div>
+
+  <div class="container">
+    <% @publications.each do |publication| %>
+      <a href="<%= publication.slug %>/"><%= publication.name %></a>
+    <% end -%>
+  </div>
+
+</body>
+</html>
