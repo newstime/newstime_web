@@ -14,8 +14,8 @@
   </div>
 
   <div class="container">
-    <% @publications.each do |publication| %>
-      <a href="<%= publication.slug %>/"><%= publication.name %></a>
+    <% @editions.each do |edition| %>
+      <a href="<%= edition.publication.slug %>/<%= edition.slug %>/"><%= edition.name %></a>
     <% end -%>
   </div>
 
