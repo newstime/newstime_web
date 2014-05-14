@@ -1,4 +1,26 @@
 body {
+
+}
+
+.container {
+  max-width: 1170px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.shelf {
+  .edition {
+    $height: 175px;
+    height: $height;
+    width: $height * 1.6;
+
+    border: 1px solid gray;
+
+    float: left;
+    margin: 5px;
+  }
 }
 
 .logo-container {

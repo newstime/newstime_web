@@ -13,10 +13,41 @@
     </div>
   </div>
 
+  <br>
   <div class="container">
-    <% @editions.each do |edition| %>
-      <a href="<%= edition.publication.slug %>/<%= edition.slug %>/"><%= edition.name %></a>
-    <% end -%>
+
+    <div class="shelf">
+      <% @editions.each do |edition| %>
+        <div class="edition">
+          <a href="<%= edition.publication.slug %>/<%= edition.slug %>/"><%= edition.name %></a>
+        </div>
+      <% end -%>
+    </div>
+
+    <div class="shelf">
+      <% @editions.each do |edition| %>
+        <div class="edition">
+          <a href="<%= edition.publication.slug %>/<%= edition.slug %>/"><%= edition.name %></a>
+        </div>
+      <% end -%>
+    </div>
+
+    <div class="shelf">
+      <% @editions.each do |edition| %>
+        <div class="edition">
+          <a href="<%= edition.publication.slug %>/<%= edition.slug %>/"><%= edition.name %></a>
+        </div>
+      <% end -%>
+    </div>
+
+    <div class="shelf">
+      <% @editions.each do |edition| %>
+        <div class="edition">
+          <a href="<%= edition.publication.slug %>/<%= edition.slug %>/"><%= edition.name %></a>
+        </div>
+      <% end -%>
+    </div>
+
   </div>
 
 </body>
