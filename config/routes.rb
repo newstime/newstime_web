@@ -1,8 +1,9 @@
 Newsstand::Application.routes.draw do
 
+  devise_for :users
   root to: "pages#home"
 
-  devise_for :users
+  #devise_for :users
 
   namespace :newsstand do
   resources :editions
