@@ -48,15 +48,18 @@ class EditionsController < ApplicationController
     @edition.zip_name = zip.original_filename # Copy zip name to the edition.
     @edition.slug = params[:edition_slug]
 
+    @edition.save
+
     @edition.ensure_share_path!
+
     File.open(@edition.zip_share_path, 'wb') do |file|
       file.write(zip.read)
     end
 
+
     # TODO: Extract zip for serving
     system "cd #{@edition.share_path}; unzip #{@edition.zip_name} -d extracted"
 
-    @edition.save
     render text: :ok
   end
 
