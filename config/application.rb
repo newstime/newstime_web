@@ -27,5 +27,10 @@ module Newsstand
 
     # Use Accel-Redirect for serving files with nginx
     config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
+
+    config.generators do |g|
+      g.orm :active_record
+    end
+
   end
 end
