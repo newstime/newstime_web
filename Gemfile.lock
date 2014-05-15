@@ -216,6 +216,7 @@ DEPENDENCIES
   mongoid (~> 4.0.0.alpha1)!
   mongoid-paperclip
   nprogress-rails
+  paperclip
   pg
   rails (= 4.0.2)
   redcarpet

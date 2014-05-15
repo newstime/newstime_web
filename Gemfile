@@ -18,6 +18,7 @@ gem 'unicorn'
 gem 'simple_form'
 gem 'binding_of_caller'
 gem "devise"
+gem "paperclip"
 gem "mongoid-paperclip", :require => "mongoid_paperclip"
 gem 'draper'
 

@@ -1,22 +1,11 @@
-class Edition
-  include Mongoid::Document
-  include Mongoid::Paperclip
-
-  #before_save :set_slug
-
-  field :name, type: String
-  field :slug, type: String
-  field :created_at, type: Time
-  field :zip_name, type: String
-  field :publish_date, type: Date
-  field :fmt_price,    type: String  # Formatted price string
-  field :volume_label, type: String  # Formatted price string
-
-  has_mongoid_attached_file :cover
+class Edition < ActiveRecord::Base
 
   belongs_to :organization
+  belongs_to :publication
+  belongs_to :user
 
-  belongs_to :publication, inverse_of: :editions
+  # Paperclip
+  #has_attached_file :cover
 
   # Returns the path to where edition is saved on disk.
   def share_path
@@ -36,6 +25,5 @@ class Edition
   def cover_url
     "/#{publication.slug}/#{slug}/cover.png"
   end
-
 
 end

@@ -11,9 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140515214654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "editions", force: true do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.string   "zip_name"
+    t.string   "publish_date"
+    t.string   "fmt_price"
+    t.string   "volume_label"
+    t.integer  "publication_id"
+    t.integer  "user_id"
+    t.integer  "organization_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "editions", ["organization_id"], name: "index_editions_on_organization_id", using: :btree
+  add_index "editions", ["publication_id"], name: "index_editions_on_publication_id", using: :btree
+  add_index "editions", ["user_id"], name: "index_editions_on_user_id", using: :btree
 
 end
