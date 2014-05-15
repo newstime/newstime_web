@@ -30,6 +30,7 @@ module Newsstand
 
     config.generators do |g|
       g.orm :active_record
+      g.test_framework false
     end
 
   end
