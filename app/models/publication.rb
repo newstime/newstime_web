@@ -1,14 +1,10 @@
-class Publication
-  include Mongoid::Document
-  include Mongoid::Timestamps
+class Publication < ActiveRecord::Base
+  belongs_to :user
+  belongs_to :organization
 
-  field :name, type: String
-  field :slug, type: String
-
-  has_many :editions, inverse_of: :publication
+  has_many :editions
 
   def share_path
     Rails.root.join('share', 'publications', id.to_s)
   end
-
 end
