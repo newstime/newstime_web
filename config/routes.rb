@@ -11,7 +11,7 @@ Newsstand::Application.routes.draw do
     post ':edition_slug' => 'editions#create'
   end
 
-  get ':slug/*path' => 'profiles#show'
+  get ':slug' => 'profiles#show'
 
   match "*a", :to => "application#routing_error", via: [:get, :post]
 
