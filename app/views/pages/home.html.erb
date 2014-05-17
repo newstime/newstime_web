@@ -1,29 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Newstime Store</title>
-  <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag "application", media: "all" %>
+<% content_for :head do %>
   <%= stylesheet_link_tag "home", media: "all" %>
-</head>
-<body>
-  <%= render 'navbar' %>
+<% end -%>
 
-  <div class="container rack">
+<div class="container rack">
 
-    <% @editions.each_slice(4) do |editions| %>
-      <div class="shelf clearfix">
-        <% editions.each do |edition| %>
-          <div class="edition">
-            <a href="<%= edition.publication.slug %>/<%= edition.slug %>/">
-              <%= image_tag edition.cover_url %>
-            </a>
-          </div>
-        <% end -%>
-      </div>
-    <% end -%>
+  <% @editions.each_slice(4) do |editions| %>
+    <div class="shelf clearfix">
+      <% editions.each do |edition| %>
+        <div class="edition">
+          <a href="<%= edition.publication.slug %>/<%= edition.slug %>/">
+            <%= image_tag edition.cover_url %>
+          </a>
+        </div>
+      <% end -%>
+    </div>
+  <% end -%>
 
-  </div>
-
-</body>
-</html>
+</div>
