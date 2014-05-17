@@ -4,10 +4,6 @@ class PublicationsController < ApplicationController
 
   skip_before_filter :verify_authenticity_token, only: :create
 
-  def index
-    @publication = Publication.find_by(slug: params[:publication_slug])
-  end
-
   def show
     @current_user = User.new # Mock user for a moment.
     @publication = Publication.find_by(slug: params[:publication_slug])
