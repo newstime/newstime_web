@@ -13,15 +13,6 @@ class EditionsController < ApplicationController
     @edition = Edition.new
   end
 
-  def create
-    @edition = Edition.new(edition_params)
-    if @edition.save
-      redirect_to @edition, notice: "Edition created successfully."
-    else
-      render "new"
-    end
-  end
-
   def show
     #case params[:format]
     #when 'html'
@@ -40,15 +31,21 @@ class EditionsController < ApplicationController
     # Look up the publication, identified by the slug in the url.
     @publication = Publication.find_by(slug: params[:publication_slug])
 
-    # Prevent posgting the same edition twice.
-    raise "Edition already exists." if @publication.editions.where(slug: params[:edition_slug]).exists?
+    if @publication.editions.where(slug: params[:edition_slug]).exists?
+      # Edition exists, receive updates
+      @edition = Edition.find_by(slug: params[:edition_slug])
 
-    @edition = Edition.new(edition_params)
-    @edition.publication = @publication
-    @edition.zip_name = zip.original_filename # Copy zip name to the edition.
-    @edition.slug = params[:edition_slug]
 
-    @edition.save
+    else
+      # Edition doesn't exist for slug, create new edition
+      @edition = Edition.new(edition_params)
+      @edition.publication = @publication
+      @edition.zip_name = zip.original_filename # Copy zip name to the edition.
+      @edition.slug = params[:edition_slug]
+
+      @edition.save
+
+    end
 
     @edition.ensure_share_path!
 
@@ -56,9 +53,8 @@ class EditionsController < ApplicationController
       file.write(zip.read)
     end
 
-
-    # TODO: Extract zip for serving
-    system "cd #{@edition.share_path}; unzip #{@edition.zip_name} -d extracted"
+    Rails.logger.info `rm -rf #{@edition.share_path}/extracted`
+    Rails.logger.info `cd #{@edition.share_path}; unzip #{@edition.zip_name} -d extracted`
 
     render text: :ok
   end
