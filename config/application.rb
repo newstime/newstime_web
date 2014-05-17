@@ -33,5 +33,7 @@ module Newsstand
       g.test_framework false
     end
 
+    config.assets.paths << "#{Rails.root}/app/assets/fonts"
+
   end
 end

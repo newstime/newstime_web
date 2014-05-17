@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  * = require navbar
+ * = require font_faces/raleway
  */
 
 .edition-display {
@@ -28,6 +29,9 @@
     width: 600px;
     text-align: center;
     button {
+      font-family: Raleway;
+      font-weight: 100;
+      outline: none;
       display: inline;
       margin: 10px;
       background-color: #484c55;
