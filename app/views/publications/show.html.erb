@@ -5,7 +5,7 @@
     </a>
 
     <div class="edition-buttons">
-      <% if @current_user.owns?(@edition) %>
+      <% if current_user.owns?(@edition) %>
         <button>Read Now</button>
         <button>Download</button>
       <% else -%>
