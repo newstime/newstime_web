@@ -67,4 +67,8 @@ module ApplicationHelper
     "#{path}?#{@options.merge(options).to_param}"
   end
 
+  def newstime_press_url
+    NEWSTIME_PRESS_URL
+  end
+
 end

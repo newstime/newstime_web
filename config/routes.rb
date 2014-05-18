@@ -11,6 +11,8 @@ Newsstand::Application.routes.draw do
     post ':edition_slug' => 'editions#create'
   end
 
+  get 'account' => 'accounts#show'
+
   get "*path", :to => "pages#show"
 
 end

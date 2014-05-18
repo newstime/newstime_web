@@ -16,3 +16,4 @@
 /tmp
 share/
 public/system/
+.env
