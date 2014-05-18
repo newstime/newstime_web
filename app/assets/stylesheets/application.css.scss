@@ -28,7 +28,9 @@
     margin: 0 auto;
     width: 600px;
     text-align: center;
-    button {
+    button, a.btn {
+      text-decoration: none;
+      cursor: default;
       font-family: Raleway;
       font-weight: 100;
       outline: none;

@@ -6,7 +6,7 @@
 
     <div class="edition-buttons">
       <% if current_user.owns?(@edition) %>
-        <button>Read Now</button>
+        <a class="btn" href="main.html">Read Now</a>
         <button>Download</button>
       <% else -%>
         <button>Buy Copy</button>
