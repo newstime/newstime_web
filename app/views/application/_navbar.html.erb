@@ -11,7 +11,7 @@
 
   <div class="login-links">
     <% if user_signed_in? %>
-      <%= link_to current_user.username, "/account" %>
+      <%= current_user.username %>
       &bull;
       <%= link_to('Sign out', destroy_user_session_path, :method => :delete) %>
     <% else %>
