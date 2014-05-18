@@ -1,3 +1,3 @@
-class UserProfile < Profile
+class UserProfile < Page
   belongs_to :user
 end

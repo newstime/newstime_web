@@ -1,3 +1,3 @@
-class OrganzationProfile < Profile
+class OrganizationProfile < Page
   belongs_to :organization
 end

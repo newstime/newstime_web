@@ -1,7 +1,7 @@
-class CreateProfiles < ActiveRecord::Migration
+class CreatePages < ActiveRecord::Migration
   def change
-    create_table :profiles do |t|
-      t.string :slug
+    create_table :pages do |t|
+      t.string :path
       t.string :type
       t.references :user, index: true
       t.references :organization, index: true
@@ -10,6 +10,6 @@ class CreateProfiles < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :profiles, :slug
+    add_index :pages, :path
   end
 end

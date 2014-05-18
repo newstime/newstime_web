@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(version: 20140517040824) do
     t.datetime "updated_at"
   end
 
-  create_table "profiles", force: true do |t|
-    t.string   "slug"
+  create_table "pages", force: true do |t|
+    t.string   "path"
     t.string   "type"
     t.integer  "user_id"
     t.integer  "organization_id"
@@ -50,10 +50,10 @@ ActiveRecord::Schema.define(version: 20140517040824) do
     t.datetime "updated_at"
   end
 
-  add_index "profiles", ["organization_id"], name: "index_profiles_on_organization_id", using: :btree
-  add_index "profiles", ["publication_id"], name: "index_profiles_on_publication_id", using: :btree
-  add_index "profiles", ["slug"], name: "index_profiles_on_slug", using: :btree
-  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
+  add_index "pages", ["organization_id"], name: "index_pages_on_organization_id", using: :btree
+  add_index "pages", ["path"], name: "index_pages_on_path", using: :btree
+  add_index "pages", ["publication_id"], name: "index_pages_on_publication_id", using: :btree
+  add_index "pages", ["user_id"], name: "index_pages_on_user_id", using: :btree
 
   create_table "publications", force: true do |t|
     t.string   "name"
