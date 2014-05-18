@@ -5,7 +5,7 @@
     </a>
 
     <div class="edition-buttons">
-      <% if current_user.owns?(@edition) %>
+      <% if current_user.try(:owns?, @edition) %>
         <a class="btn" href="main.html">Read Now</a>
         <button>Download</button>
       <% else -%>

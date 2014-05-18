@@ -4,25 +4,18 @@ class EditionsController < ApplicationController
 
   skip_before_filter :verify_authenticity_token, only: :create
 
-  def index
-    @editions = Edition.all
-    @editions = @editions.select(&:path)
-  end
-
-  def new
-    @edition = Edition.new
-  end
+  before_filter :force_trailing_slash, only: 'show'
 
   def show
-    #case params[:format]
-    #when 'html'
-      #render status: 403, text: "Access Denied"
-    #else
-      year, month, day, path = params[:path].match(/(\d{4})\/(\d{2})\/(\d{2})\/?(.*)/).try(:captures)
+    @publication = Publication.find_by(slug: params[:publication_slug])
+    @edition = @publication.editions.find_by(slug: params[:edition_slug])
+    not_found unless @edition
+  end
 
-      @edition = Edition.where(path: "#{year}/#{month}/#{day}").first
-      send_file "share/editions/#{@edition.path}/#{path}.#{params[:format]}", type: 'text/html', disposition: 'inline'
-    #end
+  def browse
+    @publication = Publication.find_by(slug: params[:publication_slug])
+    @edition = @publication.editions.find_by(slug: params[:edition_slug])
+    send_file "#{@edition.share_path}/extracted/#{params[:path]}.#{params[:format]}", disposition: 'inline'
   end
 
   def create

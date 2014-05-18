@@ -5,8 +5,8 @@ Newsstand::Application.routes.draw do
   root to: "pages#home"
 
   scope ":publication_slug" do
-    get ':edition_slug' => 'publications#show'
-    get ':edition_slug/*path' => 'publications#browse'
+    get ':edition_slug' => 'editions#show'
+    get ':edition_slug/*path' => 'editions#browse'
 
     post ':edition_slug' => 'editions#create'
   end
