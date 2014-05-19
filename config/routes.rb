@@ -4,6 +4,8 @@ Newsstand::Application.routes.draw do
 
   root to: "pages#home"
 
+  get 'downloads' => 'downloads#download'
+
   scope ":publication_slug" do
     get ':edition_slug' => 'editions#show'
     get ':edition_slug/*path' => 'editions#browse'

@@ -26,4 +26,8 @@ class Edition < ActiveRecord::Base
     "/#{publication.slug}/#{slug}/cover.png"
   end
 
+  def download_url
+    "/downloads?edition_id=#{id}"
+  end
+
 end

@@ -5,10 +5,11 @@
     </a>
 
     <div class="edition-buttons">
-      <% if current_user.try(:owns?, @edition) %>
+      <%# if current_user.try(:owns?, @edition) %>
         <a class="btn" href="main.html">Read Now</a>
-        <button>Download</button>
-      <% else -%>
+        <a class="btn" href="<%= @edition.download_url %>">Download</a>
+      <%# end -%>
+      <% if false %>
         <button>Buy Copy</button>
         <button>Subscribe</button>
       <% end -%>
