@@ -60,10 +60,14 @@
   box-sizing: border-box;
   font-family: Raleway;
 
+  h2{
+    font-weight: 200;
+  }
+
   a {
     color: #428bca;
     font-size: .9em;
-
+    text-decoration: none;
   }
 
   .form-control {
