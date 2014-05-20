@@ -6,6 +6,8 @@ class EditionsController < ApplicationController
 
   before_filter :force_trailing_slash, only: 'show'
 
+  before_action :authenticate_user!, only: :purchase
+
   def show
     @publication = Publication.find_by(slug: params[:publication_slug])
     @edition = @publication.editions.find_by(slug: params[:edition_slug])
