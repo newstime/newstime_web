@@ -28,7 +28,10 @@ gem 'nprogress-rails'
 
 group :development, :test do
   gem 'debugger'
+
   gem 'better_errors'
+
+gem 'habtm_generator'
 end
 
 # Use ActiveModel has_secure_password

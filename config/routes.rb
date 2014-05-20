@@ -6,6 +6,18 @@ Newsstand::Application.routes.draw do
 
   get 'downloads' => 'downloads#download'
 
+  resources :editions do
+    member do
+      put :purchase
+    end
+  end
+
+  resources :publications do
+    member do
+      put :subscribe
+    end
+  end
+
   scope ":publication_slug" do
     get ':edition_slug' => 'editions#show'
     get ':edition_slug/*path' => 'editions#browse'

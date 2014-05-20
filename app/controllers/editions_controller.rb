@@ -28,7 +28,6 @@ class EditionsController < ApplicationController
       # Edition exists, receive updates
       @edition = Edition.find_by(slug: params[:edition_slug])
 
-
     else
       # Edition doesn't exist for slug, create new edition
       @edition = Edition.new(edition_params)
@@ -37,7 +36,6 @@ class EditionsController < ApplicationController
       @edition.slug = params[:edition_slug]
 
       @edition.save
-
     end
 
     @edition.ensure_share_path!
@@ -50,6 +48,12 @@ class EditionsController < ApplicationController
     Rails.logger.info `cd #{@edition.share_path}; unzip #{@edition.zip_name} -d extracted`
 
     render text: :ok
+  end
+
+  def purchase
+    @edition = Edition.find(params[:id])
+    current_user.buy_edition(@edition)
+    redirect_to :back
   end
 
 private
