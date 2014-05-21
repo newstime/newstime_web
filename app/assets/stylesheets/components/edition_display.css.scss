@@ -1,0 +1,42 @@
+.edition-display {
+  position: relative;
+  .cover {
+    width: 1100px;
+    margin: 20px auto;
+    display: block;
+    /*box-shadow: 2px 2px 1px #aaa;*/
+  }
+
+  .edition-buttons {
+    position: absolute;
+    top: 500px;
+    left: 0; right: 0;
+    margin: 0 auto;
+    width: 700px;
+    text-align: center;
+    button, a.btn {
+      i.fa {
+        display: inline-block;
+        margin-right: 5px !important;
+      }
+      text-decoration: none;
+      font-family: Raleway;
+      font-weight: 100;
+      outline: none;
+      display: inline;
+      margin: 10px;
+      background-color: #484c55;
+      border: none;
+      color: #ccc;
+      font-size: 15pt;
+      padding: 10px 25px;
+    }
+
+    a.btn-white{
+      background: rgba(255,255,255,.9);
+      color: #484c55;
+      font-weight: 200;
+    }
+  }
+
+}

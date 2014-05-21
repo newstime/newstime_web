@@ -7,7 +7,7 @@
     <div class="edition-buttons">
       <% if current_user.try(:owner?, @edition) %>
         <a class="btn btn-white" href="main.html">Read now</a>
-        <a class="btn" href="<%= @edition.download_url %>">Download</a>
+        <a class="btn" href="<%= @edition.download_url %>"><i class="fa fa-cloud-download"></i> Download</a>
       <% else -%>
         <a class="btn btn-white" href="main.html">Read now</a>
         <%= link_to "Purchase", purchase_edition_url(@edition), method: :put, class: 'btn' %>
