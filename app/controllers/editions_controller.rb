@@ -22,9 +22,15 @@ class EditionsController < ApplicationController
       # Check referer, is it from the content?
       unless current_user.try(:owner?, @edition)
         if request.referer != request.original_url && request.referer =~ /\/#{params[:publication_slug]}\/#{params[:edition_slug]}.*\.html/
-          # And doesn't own.
-          @continue_to = request.original_url
-          render 'inbetween', status: 403, layout: false and return
+          pass_count = flash[:pass_count].to_i
+          if pass_count.zero?
+            flash[:pass_count] = 2 # Every x pages
+            @continue_to = request.original_url
+            render 'inbetween', status: 403, layout: false and return
+          else
+            # Grant pass
+            flash[:pass_count] = pass_count - 1
+          end
         end
       end
     end
