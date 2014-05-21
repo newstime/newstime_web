@@ -15,4 +15,7 @@ class PagesController < ApplicationController
       render "404", status: 404
     end
   end
+
+  def news_organization_sign_up
+  end
 end

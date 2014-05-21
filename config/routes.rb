@@ -7,6 +7,8 @@ Newsstand::Application.routes.draw do
 
   get 'downloads' => 'downloads#download'
 
+  get 'news_organizations/sign_up' => 'pages#news_organization_sign_up', as: 'news_organization_sign_up'
+
   resources :editions do
     member do
       put :purchase
