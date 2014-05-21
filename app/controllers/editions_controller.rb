@@ -23,7 +23,7 @@ class EditionsController < ApplicationController
       if request.referer != request.original_url && request.referer =~ /\/#{params[:publication_slug]}\/#{params[:edition_slug]}.*\.html/
         # And doesn't own.
         @continue_to = request.original_url
-        render 'insert', status: 403, layout: false and return
+        render 'inbetween', status: 403, layout: false and return
       end
     end
 
