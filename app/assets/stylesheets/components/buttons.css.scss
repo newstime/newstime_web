@@ -1,0 +1,24 @@
+button,
+.btn {
+  i.fa {
+    display: inline-block;
+    margin-right: 5px !important;
+  }
+  text-decoration: none;
+  font-family: Raleway;
+  font-weight: 100;
+  outline: none;
+  display: inline;
+  margin: 10px;
+  background-color: #484c55;
+  border: none;
+  color: #ccc;
+  font-size: 15pt;
+  padding: 10px 25px;
+}
+
+.btn-white{
+  background: rgba(255,255,255,.9);
+  color: #484c55;
+  font-weight: 200;
+}

@@ -13,4 +13,8 @@ class Publication < ActiveRecord::Base
     editions.order(created_at: :desc).first
   end
 
+  def url
+    "/#{slug}"
+  end
+
 end

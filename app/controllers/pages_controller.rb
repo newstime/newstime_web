@@ -18,4 +18,5 @@ class PagesController < ApplicationController
 
   def news_organization_sign_up
   end
+
 end

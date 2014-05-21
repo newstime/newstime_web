@@ -1,0 +1,35 @@
+.login-form {
+  width: 300px;
+  margin: 100px auto 0;
+
+  box-sizing: border-box;
+  font-family: Raleway;
+
+  h2{
+    font-weight: 200;
+  }
+
+  .form-control, .btn, h2, a {
+    margin: 10px;
+  }
+
+  .btn {
+    color: #333333;
+    border: 1px solid #ccc;
+    background-color: white;
+    font-family: Raleway;
+
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    white-space: nowrap;
+    -webkit-user-select: none;
+  }
+
+}

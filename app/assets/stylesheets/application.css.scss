@@ -9,15 +9,27 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  * = require font_faces/raleway
- *
  * = require font-awesome
+ *
  * = require components/navbar
  * = require components/edition_display
  * = require components/newsrack
  * = require components/news_org_sign_up
+ * = require components/buttons
+ * = require components/login_form
  */
 
-body { }
+body {
+  font-family: Raleway;
+}
+
+.text-center {
+  text-align: center;
+}
+
+h1, h2 {
+  font-weight: 100;
+}
 
 a {
   color: #428bca;
@@ -35,7 +47,6 @@ a {
 
 
 .form-control {
-  font-family: Raleway;
   display: block;
   width: 250px;
   padding: 6px 12px;
@@ -51,43 +62,6 @@ a {
   -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   outline: none;
-}
-
-
-.login-form {
-  width: 300px;
-  margin: 100px auto 0;
-
-  box-sizing: border-box;
-  font-family: Raleway;
-
-  h2{
-    font-weight: 200;
-  }
-
-  .form-control, .btn, h2, a {
-    margin: 10px;
-  }
-
-  .btn {
-    color: #333333;
-    border: 1px solid #ccc;
-    background-color: white;
-    font-family: Raleway;
-
-    display: inline-block;
-    padding: 6px 12px;
-    margin-bottom: 0;
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 1.42857;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    white-space: nowrap;
-    -webkit-user-select: none;
-  }
-
 }
 
 /* Clearfix */

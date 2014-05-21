@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Newsstand</title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= content_for(:head) %>
+</head>
+<body>
+
+  <br>
+  <div class="container insert text-center">
+    <h2>
+      You are reading <%= link_to @edition.name, @edition.url %> of the <%= link_to @publication.name, @publication.url %>
+    </h2>
+
+    <p>
+      If you enjoy the content, or otherwise find it useful, please show your
+      support by purchasing a copy. You can still browse online, plus download
+      and keep it.
+    </p>
+
+    <p>
+      Purchasing a copy helps ensure more great content like it.
+    </p>
+
+    <p>
+      <%= link_to "Continue to Content", @continue_to, class: "continue-link" %>
+    </p>
+  <div>
+
+  <%= yield %>
+</body>
+</html>

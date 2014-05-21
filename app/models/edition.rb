@@ -25,8 +25,13 @@ class Edition < ActiveRecord::Base
 
   # TODO: Move to decorator...
   def cover_url
-    "/#{publication.slug}/#{slug}/cover.png"
+    "#{url}/cover.png"
   end
+
+  def url
+    "#{publication.url}/#{slug}"
+  end
+
 
   def download_url
     "/downloads?edition_id=#{id}"
