@@ -20,10 +20,12 @@ class EditionsController < ApplicationController
 
     if params[:format] == 'html'
       # Check referer, is it from the content?
-      if request.referer != request.original_url && request.referer =~ /\/#{params[:publication_slug]}\/#{params[:edition_slug]}.*\.html/
-        # And doesn't own.
-        @continue_to = request.original_url
-        render 'inbetween', status: 403, layout: false and return
+      unless current_user.try(:owner?, @edition)
+        if request.referer != request.original_url && request.referer =~ /\/#{params[:publication_slug]}\/#{params[:edition_slug]}.*\.html/
+          # And doesn't own.
+          @continue_to = request.original_url
+          render 'inbetween', status: 403, layout: false and return
+        end
       end
     end
 

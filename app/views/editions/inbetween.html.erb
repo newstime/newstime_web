@@ -11,6 +11,11 @@
 
   <br>
   <div class="container insert text-center inbetween">
+    <h1>
+      <%= link_to 'Continue to Content', @continue_to, class: "continue-link" %>
+    </h1>
+    <br>
+    <br>
     <h2>
       You are reading <%= link_to @edition.name, @edition.url %> of the <%= link_to @publication.name, @publication.url %>
     </h2>
@@ -27,7 +32,7 @@
 
     <br>
     <p>
-      <%= link_to "Purchase", "", class: "btn" %>
+      <%= link_to "Purchase", purchase_edition_url(@edition), method: :put, class: 'btn' %>
       or&nbsp;
       <%= link_to 'Continue to Content', @continue_to, class: "continue-link" %>
     </p>
