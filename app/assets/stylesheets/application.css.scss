@@ -14,19 +14,10 @@
  * = require components/navbar
  * = require components/edition_display
  * = require components/newsrack
+ * = require components/news_org_sign_up
  */
 
 body { }
-
-.news-org-sign-up {
-  text-align: center;
-  margin: 300px 0;
-  a {
-    font-family: Raleway;
-    font-size: 20pt;
-    font-weight: 200;
-  }
-}
 
 a {
   color: #428bca;
@@ -62,6 +53,7 @@ a {
   outline: none;
 }
 
+
 .login-form {
   width: 300px;
   margin: 100px auto 0;
@@ -72,7 +64,6 @@ a {
   h2{
     font-weight: 200;
   }
-
 
   .form-control, .btn, h2, a {
     margin: 10px;
@@ -96,6 +87,7 @@ a {
     white-space: nowrap;
     -webkit-user-select: none;
   }
+
 }
 
 /* Clearfix */
