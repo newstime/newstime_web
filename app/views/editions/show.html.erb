@@ -6,11 +6,11 @@
 
     <div class="edition-buttons">
       <% if current_user.try(:owner?, @edition) %>
-        <a class="btn" href="main.html">Read Now</a>
+        <a class="btn btn-white" href="main.html">Read now</a>
         <a class="btn" href="<%= @edition.download_url %>">Download</a>
       <% else -%>
-        <%= link_to "Buy Copy", purchase_edition_url(@edition), method: :put, class: 'btn' %>
-        <%= link_to "Subscribe", subscribe_publication_url(@edition.publication), method: :put, class: 'btn' %>
+        <a class="btn btn-white" href="main.html">Read now</a>
+        <%= link_to "Purchase", purchase_edition_url(@edition), method: :put, class: 'btn' %>
       <% end -%>
     </div>
   </div>
