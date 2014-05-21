@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 
   before_filter :force_trailing_slash, only: ['show']
 
-  def home
+  def newsrack
     @editions = Edition.all.order(created_at: :desc).take(24)
   end
 

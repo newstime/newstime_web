@@ -3,6 +3,7 @@ Newsstand::Application.routes.draw do
   devise_for :users
 
   root to: "pages#home"
+  get 'newsrack' => "pages#newsrack"
 
   get 'downloads' => 'downloads#download'
 

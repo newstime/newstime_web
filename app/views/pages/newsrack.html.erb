@@ -1,0 +1,22 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag "home", media: "all" %>
+<% end -%>
+
+<div class="container rack">
+
+  <% @editions.each_slice(4) do |editions| %>
+    <div class="shelf clearfix">
+      <% editions.each do |edition| %>
+        <div class="edition">
+          <a href="<%= edition.publication.slug %>/<%= edition.slug %>/">
+            <%= image_tag edition.cover_url %>
+          </a>
+        </div>
+      <% end -%>
+    </div>
+  <% end -%>
+
+
+  <%= link_to "Are you a News Organization?", organization_signup_url %>
+
+</div>

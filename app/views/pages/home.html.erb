@@ -2,18 +2,8 @@
   <%= stylesheet_link_tag "home", media: "all" %>
 <% end -%>
 
-<div class="container rack">
-
-  <% @editions.each_slice(4) do |editions| %>
-    <div class="shelf clearfix">
-      <% editions.each do |edition| %>
-        <div class="edition">
-          <a href="<%= edition.publication.slug %>/<%= edition.slug %>/">
-            <%= image_tag edition.cover_url %>
-          </a>
-        </div>
-      <% end -%>
-    </div>
-  <% end -%>
-
+<div class="container">
+  <div class="news-org-signup">
+    <%= link_to "Are you a news organization?", "/news_organizations/signup" %>
+  </div>
 </div>

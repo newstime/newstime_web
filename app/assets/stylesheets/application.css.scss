@@ -12,6 +12,12 @@
  * = require font_faces/raleway
  */
 
+a {
+  color: #428bca;
+  font-size: .9em;
+  text-decoration: none;
+}
+
 .edition-display {
   position: relative;
   .cover {
@@ -68,12 +74,6 @@
 
   h2{
     font-weight: 200;
-  }
-
-  a {
-    color: #428bca;
-    font-size: .9em;
-    text-decoration: none;
   }
 
   .form-control {

@@ -1,6 +1,24 @@
 body {
 }
 
+#search {
+  display: none;
+}
+
+.login-links {
+  display: none;
+}
+
+
+.news-org-signup {
+  text-align: center;
+  margin: 300px 0;
+  a {
+    font-family: Raleway;
+    font-size: 20pt;
+    font-weight: 200;
+  }
+}
 
 
 .shelf {
