@@ -1,0 +1,12 @@
+<nav class="breadcrumbs">
+  <a href="/newsrack">My News Rack</a>
+
+  <% if @publication %>
+    /
+    <%= link_to @publication.name, @publication.url %>
+  <% end -%>
+  <% if @edition %>
+    /
+  <%= link_to @edition.name, @edition.url %>
+<% end -%>
+</nav>
