@@ -24,7 +24,7 @@ class EditionsController < ApplicationController
 
     if params[:format] == 'html'
       # Check referer, is it from the content?
-      unless current_user.try(:owner?, @edition)
+      unless @edition.free? || current_user.try(:owner?, @edition)
         if request.referer != request.original_url && request.referer =~ /\/#{params[:publication_slug]}\/#{params[:edition_slug]}.*\.html/
           pass_count = flash[:pass_count].to_i
           if pass_count.zero?

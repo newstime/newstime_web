@@ -6,7 +6,7 @@
     <div class="edition-buttons">
       <% if show_download_links %>
         <a class="btn btn-white" href="main.html">Read now</a>
-        <a class="btn" href="<%= @edition.download_url %>"><i class="fa fa-cloud-download"></i> <%= "FREE" if @edition.free? %> Download</a>
+        <a class="btn" href="<%= @edition.download_url %>"><i class="fa fa-cloud-download"></i> Download</a>
       <% else -%>
         <a class="btn btn-white" href="main.html">Read now</a>
         <%= render 'purchase_button' %>
