@@ -2,8 +2,15 @@
   <%= stylesheet_link_tag "home", media: "all" %>
 <% end -%>
 
-<div class="container newsrack">
+<nav class="breadcrumb">
+  <a href="/newsrack">My News Rack</a> &gt;
+<%#<a href="/newsrack">Top Editions</a>%>
+<%#<a href="/newsrack">Most Recent</a>%>
+<%#<a href="/newsrack">Popular</a>%>
+<%#<a href="/newsrack">World News</a>%>
+</nav>
 
+<div class="container newsrack">
   <% @editions.each_slice(4) do |editions| %>
     <div class="shelf clearfix">
       <% editions.each do |edition| %>
