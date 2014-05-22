@@ -32,6 +32,14 @@ class Edition < ActiveRecord::Base
     "#{publication.url}/#{slug}"
   end
 
+  def pricef
+    if price < 1.00
+      "%.f¢" % (price.round(2)*100)
+    else
+      "$%.2f" % price.round(2)
+    end
+  end
+
 
   def download_url
     "/downloads?edition_id=#{id}"
