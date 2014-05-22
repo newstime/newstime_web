@@ -8,74 +8,21 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ * = require ./application/reset
  * = require font_faces/raleway
  * = require font-awesome
  *
- * = require components/navbar
- * = require components/edition_display
- * = require components/newsrack
- * = require components/news_org_sign_up
- * = require components/buttons
- * = require components/login_form
- * = require components/inbetween
+ * = require_tree ./application
  */
 
 body {
   font-family: Raleway;
 }
 
-.text-center {
-  text-align: center;
-}
-
 h1, h2 {
   font-weight: 100;
 }
 
-a {
-  color: #428bca;
-  font-size: .9em;
-  text-decoration: none;
-}
-
-.container {
-  max-width: 1170px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-
-.form-control {
-  display: block;
-  width: 250px;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857;
-  color: #555555;
-  vertical-align: middle;
-  background-color: white;
-  border: 1px solid #cccccc;
-  border-radius: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-  outline: none;
-}
-
-/* Clearfix */
-.clearfix:after {
-    clear: both;
-    content: ".";
-    display: block;
-    height: 0;
-    visibility: hidden;
-}
-.clearfix {
-    display: inline-block;
-}
-.clearfix {
-    display: block;
+.text-center {
+  text-align: center;
 }
