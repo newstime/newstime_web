@@ -6,7 +6,7 @@ class EditionsController < ApplicationController
 
   before_filter :force_trailing_slash, only: 'show'
 
-  before_action :authenticate_user!, only: :purchase
+  #before_action :authenticate_user!, only: :purchase
 
   def show
     @publication = Publication.find_by(slug: params[:publication_slug])
@@ -71,9 +71,13 @@ class EditionsController < ApplicationController
   end
 
   def purchase
-    @edition = Edition.find(params[:id])
-    current_user.buy_edition(@edition)
-    redirect_to :back
+    if current_user
+      @edition = Edition.find(params[:id])
+      current_user.buy_edition(@edition)
+      redirect_to :back
+    else
+      render 'authenticate_to_purchase'
+    end
   end
 
 private
