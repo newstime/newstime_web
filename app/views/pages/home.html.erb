@@ -1,16 +1,34 @@
 <% content_for :head do %>
   <%= stylesheet_link_tag "application", media: "all" %>
   <style>
-    #search {
-      display: none;
-    }
-
-    .login-links {
-      display: none;
-    }
   </style>
 
 <% end -%>
+
+<% content_for :head do %>
+  <%= stylesheet_link_tag "home", media: "all" %>
+<% end -%>
+
+<%= render 'breadcrumbs' %>
+
+<div class="container newsrack">
+  <% @editions.each_slice(4) do |editions| %>
+    <div class="shelf clearfix">
+      <% editions.each do |edition| %>
+        <div class="edition">
+          <a href="<%= edition.publication.slug %>/<%= edition.slug %>/">
+            <%= image_tag edition.cover_url %>
+          </a>
+        </div>
+      <% end -%>
+    </div>
+  <% end -%>
+
+</div>
+<br>
+<br>
+<br>
+<br>
 
 <div class="container">
   <div class="news-org-sign-up-promo">

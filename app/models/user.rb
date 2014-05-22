@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :publications # Subscribed to publications
 
   belongs_to :current_organization, class_name: "Organization"
-
+  has_one :wallet
 
   def buy_edition(edition)
     editions << edition unless editions.exists?(edition)
@@ -30,6 +30,10 @@ class User < ActiveRecord::Base
 
   def subscriber?(publication)
     subscriptions.exists?(publication_id: publication.id, active: true)
+  end
+
+  def wallet
+    super || create_wallet
   end
 
 end

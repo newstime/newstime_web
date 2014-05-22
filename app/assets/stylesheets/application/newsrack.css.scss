@@ -73,7 +73,12 @@
     box-shadow: 0 -4px 4px #ddd;
     &:hover {
       margin-top: -10px;
-      transition: margin-top .2s ease-in-out;
+      /*transition: margin-top .2s ease-in-out;*/
+    }
+
+    &:focus {
+      margin-top: -20px;
+      /*transition: margin-top .2s ease-in-out;*/
     }
 
     transition: margin-top .2s ease-in-out;

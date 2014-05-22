@@ -4,11 +4,10 @@ Newsstand::Application.routes.draw do
 
   root to: "pages#home"
 
-  get '/search' => 'search#search' #, constraints: { :q => /.+/ }
-
-  get 'newsrack' => "pages#newsrack"
-
+  get 'search'    => 'search#search' #, constraints: { :q => /.+/ }
+  get 'newsrack'  => "pages#newsrack"
   get 'downloads' => 'downloads#download'
+  get 'wallet'    => 'wallets#show'
 
 
   get 'news_organization_sign_up' => 'pages#news_organization_sign_up', as: 'news_organization_sign_up'
