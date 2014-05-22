@@ -7,7 +7,9 @@
 </div>
 
 <div class="top-bar">
-  <input type="search" value="" placeholder="Search" name="" id="search"/>
+  <form action="/search" method="get" accept-charset="utf-8">
+    <input type="search" placeholder="Search" name="q" id="search"/>
+  </form>
 
   <div class="login-links">
     <% if current_organization %>

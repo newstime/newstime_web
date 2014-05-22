@@ -3,12 +3,15 @@ Newsstand::Application.routes.draw do
   devise_for :users, :controllers => { :sessions => "sessions" }
 
   root to: "pages#home"
+
+  get '/search' => 'search#search' #, constraints: { :q => /.+/ }
+
   get 'newsrack' => "pages#newsrack"
 
   get 'downloads' => 'downloads#download'
 
-  get 'news_organization_sign_up' => 'pages#news_organization_sign_up', as: 'news_organization_sign_up'
 
+  get 'news_organization_sign_up' => 'pages#news_organization_sign_up', as: 'news_organization_sign_up'
 
   get "/organization" => "organizations#show"
 

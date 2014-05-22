@@ -80,6 +80,9 @@ class EditionsController < ApplicationController
     end
   end
 
+  def search
+  end
+
 private
 
   def edition_params
