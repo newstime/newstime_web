@@ -9,6 +9,9 @@ Newsstand::Application.routes.draw do
 
   get 'news_organization_sign_up' => 'pages#news_organization_sign_up', as: 'news_organization_sign_up'
 
+
+  get "/organization" => "organizations#show"
+
   resources :editions do
     member do
       put :purchase

@@ -83,7 +83,7 @@ class EditionsController < ApplicationController
 private
 
   def edition_params
-    params.require(:edition).permit(:name, :publish_date, :fmt_price, :volume_label)
+    params.require(:edition).permit(:name, :publish_date, :price, :volume_label)
   end
 
 end

@@ -71,4 +71,8 @@ module ApplicationHelper
     NEWSTIME_PRESS_URL
   end
 
+  def current_organization
+    current_user.try(:current_organization)
+  end
+
 end

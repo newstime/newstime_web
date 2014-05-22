@@ -1,9 +1,13 @@
 class User < ActiveRecord::Base
-  has_and_belongs_to_many :publications
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  has_and_belongs_to_many :publications # Subscribed to publications
+
+  belongs_to :current_organization, class_name: "Organization"
+
 
   def buy_edition(edition)
     editions << edition unless editions.exists?(edition)

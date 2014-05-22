@@ -10,8 +10,13 @@
   <input type="search" value="" placeholder="Search" name="" id="search"/>
 
   <div class="login-links">
+    <% if current_organization %>
+      <%= link_to current_organization.name, "/organization" %>
+      &bull;
+    <% end -%>
+
     <% if user_signed_in? %>
-      <%= current_user.username %>
+      <%= link_to current_user.username, "/account" %>
       &bull;
       <%= link_to('Sign out', destroy_user_session_path, :method => :delete) %>
     <% else %>
