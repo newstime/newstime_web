@@ -1,1 +1,4 @@
-<%= link_to "Purchase for #{@edition.pricef}", purchase_edition_url(@edition), method: :put, class: 'btn' %>
+<%= link_to purchase_edition_url(@edition), method: :put, class: 'btn' do %>
+  Purchase
+  <span class="price"><%= @edition.pricef %></span>
+<% end -%>
