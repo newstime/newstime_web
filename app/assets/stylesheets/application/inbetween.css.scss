@@ -2,8 +2,33 @@
   margin-top: 100px;
   width: 700px;
   font-weight: 100;
+
+}
+
+.btn .price {
+  display: inline-block;
+  margin-left: 10px;
+  border-left: 1px solid #6b6b6f;
+  padding-left: 16px;
+  line-height: 44px;
+  font-weight: 200;
+  margin-right: -14px;
 }
 
 body.dark {
   background-color: #484c55;
+  color: white;
+
+  a {
+    color: #a6b2c6;
+  }
+
+  .btn-white{
+    color: #484c55;
+  }
+}
+
+
+body.grey {
+  background-color: #eee;
 }
