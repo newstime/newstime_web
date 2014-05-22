@@ -1,3 +1,5 @@
 <div class="container">
-  Show Organization
+  <h1><%= current_organization.name %></h1>
+  <%= link_to "Add Edition", new_edition_path %><br>
+  <%= link_to "Add Publication", new_publication_path %>
 </div>

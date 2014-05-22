@@ -4,8 +4,8 @@
       <h2>New Edition</h2>
       <%= simple_form_for @edition do |f| %>
         <%= f.input :name %>
-        <%= f.input :path %>
-        <%= f.input :cover %>
+        <%= f.input :slug %>
+        <%= f.input :price %>
         <%= f.button :submit, class: 'btn-default' %>
       <% end %>
     </div>

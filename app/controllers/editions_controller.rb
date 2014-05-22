@@ -14,6 +14,10 @@ class EditionsController < ApplicationController
     not_found unless @edition
   end
 
+  def new
+    @edition = Edition.new
+  end
+
   def browse
     @publication = Publication.find_by(slug: params[:publication_slug])
     @edition = @publication.editions.find_by(slug: params[:edition_slug])
