@@ -1,15 +1,8 @@
-<%= link_to root_url do %>
-  <div class="logo-container">
-      <div class="newstime-logo">
-          <%= render 'newstime_pendulum_logo' %>
-      </div>
-  </div>
-<% end -%>
-
-<div class="top-bar">
-  <form action="/search" method="get" accept-charset="utf-8">
+<%= render "nav_logo" %>
+<div class="nav-bar">
+  <%= form_tag search_url, method: 'get' do |f| %>
     <input type="search" placeholder="Search" name="q" id="search"/>
-  </form>
+  <% end -%>
 
   <div class="login-links">
     <% if current_organization %>
@@ -24,5 +17,4 @@
       <%= link_to('Sign in', new_user_session_path(return_to: request.fullpath))  %>
     <% end %>
   </div>
-
 </div>
