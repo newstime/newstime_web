@@ -33,13 +33,19 @@ class Edition < ActiveRecord::Base
   end
 
   def pricef
-    if price < 1.00
+    if price <= 0
+      "FREE"
+    elsif price < 1.00
       "%.f¢" % (price.round(2)*100)
     else
       "$%.2f" % price.round(2)
     end
   end
 
+  def free?
+    price <= 0
+
+  end
 
   def download_url
     "/downloads?edition_id=#{id}"
