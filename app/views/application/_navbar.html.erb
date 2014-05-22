@@ -14,13 +14,12 @@
       <%= link_to current_organization.name, "/organization" %>
       &bull;
     <% end -%>
-
     <% if user_signed_in? %>
       <%= link_to current_user.username, "/account" %>
       &bull;
-      <%= link_to('Sign out', destroy_user_session_path, :method => :delete) %>
+      <%= link_to('Sign out'.html_safe, destroy_user_session_path(return_to: request.fullpath), :method => :delete) %>
     <% else %>
-      <%= link_to('Sign in', new_user_session_path)  %>
+      <%= link_to('Sign in', new_user_session_path(return_to: request.fullpath))  %>
     <% end %>
   </div>
 

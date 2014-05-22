@@ -1,12 +1,17 @@
 class SessionsController < Devise::SessionsController
 
-  # POST /resource/sign_in
-  #def create
-    #self.resource = warden.authenticate!(auth_options)
-    #set_flash_message(:notice, :signed_in) if is_flashing_format?
-    #sign_in(resource_name, resource)
-    #yield resource if block_given?
-    #respond_with resource, location: after_sign_in_path_for(resource)
-  #end
+  before_filter :store_location, only: [:new, :destroy]
+
+protected
+
+  def store_location
+    session[:return_to] = params[:return_to] if params[:return_to]
+  end
+
+  def after_sign_in_path_for(resource_or_scope)
+    session[:return_to] || super
+  end
+
+  alias :after_sign_out_path_for :after_sign_in_path_for
 
 end

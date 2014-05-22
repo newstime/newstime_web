@@ -1,6 +1,6 @@
 class AccountsController < ApplicationController
 
-  before_filter :force_trailing_slash, only: ['show']
+  before_filter :authenticate_user!
 
   def show
   end
