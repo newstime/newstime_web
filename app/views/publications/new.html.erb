@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8">
+      <h2>New Publication</h2>
+      <%= simple_form_for @publication do |f| %>
+        <%= f.input :name %>
+				<%= f.input :slug %>
+				<%# f.input :price %>
+        <%= f.button :submit, class: 'btn-default' %>
+      <% end %>
+    </div>
+  </div>
+</div>

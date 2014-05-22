@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
 
   has_and_belongs_to_many :publications # Subscribed to publications
 
+  has_many :organization_users
+  has_many :organizations, through: :organization_users
+
   belongs_to :current_organization, class_name: "Organization"
   has_one :wallet
 
