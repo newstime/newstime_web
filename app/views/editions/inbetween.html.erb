@@ -32,10 +32,7 @@
 
     <br>
     <p>
-      <%= link_to purchase_edition_url(@edition), method: :put, class: 'btn' do %>
-        Purchase
-        <span class="price"><%= @edition.pricef %></span>
-      <% end -%>
+      <%= render 'purchase_button' %>
       or&nbsp;
       <%= link_to 'Continue to Content', @continue_to, class: "continue-link" %>
     </p>
