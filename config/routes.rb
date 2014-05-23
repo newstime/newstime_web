@@ -16,7 +16,7 @@ Newsstand::Application.routes.draw do
   resources :editions do
     member do
       put :purchase
-      get :authenticate_to_purchase
+      get :checkout
     end
   end
 

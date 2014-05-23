@@ -80,11 +80,11 @@ class EditionsController < ApplicationController
       current_user.buy_edition(@edition)
       redirect_to :back
     else
-      redirect_to authenticate_to_purchase_edition_path(@edition)
+      redirect_to checkout_edition_path(@edition)
     end
   end
 
-  def authenticate_to_purchase
+  def checkout
     @edition = Edition.find(params[:id])
     redirect_to @edition.url if current_user
   end
