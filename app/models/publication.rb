@@ -17,4 +17,8 @@ class Publication < ActiveRecord::Base
     "/#{slug}"
   end
 
+  def subscription_pricef
+    subscription_price
+  end
+
 end

@@ -4,5 +4,10 @@
   Change Password<br>
   Update Account Info<br>
   Subscriptions<br>
+  <% current_user.subscriptions.each do |sub| %>
+    <li><%= sub.publication.name %> &bull; <%= sub.pricef %> <a>Cancel</a> </li>
+  <% end -%>
+  <br>
+
   Transactions
 </div>
