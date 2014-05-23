@@ -9,7 +9,6 @@ Newsstand::Application.routes.draw do
   get 'downloads' => 'downloads#download'
   get 'wallet'    => 'wallets#show'
 
-
   get 'news_organization_sign_up' => 'pages#news_organization_sign_up', as: 'news_organization_sign_up'
 
   get "/organization" => "organizations#show"
@@ -17,6 +16,7 @@ Newsstand::Application.routes.draw do
   resources :editions do
     member do
       put :purchase
+      get :authenticate_to_purchase
     end
   end
 

@@ -1,3 +1,13 @@
 <div class="container">
-  Authenticate to purchase
+  <div class="purchase-item">
+    <%= @edition.publication.name %><br>
+    <%= image_tag @edition.cover_url, width: 200 %><br>
+    <%= @edition.name %><br>
+    <%= @edition.pricef %>
+  </div>
+
+  <div class="left-column">
+    Sign Up<br>
+    Sign In
+  </div>
 </div>

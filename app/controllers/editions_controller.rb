@@ -75,13 +75,18 @@ class EditionsController < ApplicationController
   end
 
   def purchase
+    @edition = Edition.find(params[:id])
     if current_user
-      @edition = Edition.find(params[:id])
       current_user.buy_edition(@edition)
       redirect_to :back
     else
-      render 'authenticate_to_purchase'
+      redirect_to authenticate_to_purchase_edition_path(@edition)
     end
+  end
+
+  def authenticate_to_purchase
+    @edition = Edition.find(params[:id])
+    redirect_to @edition.url if current_user
   end
 
   def search
