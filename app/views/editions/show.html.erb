@@ -14,3 +14,16 @@
     </div>
   </div>
 </div>
+
+<hr>
+
+<!-- Use a grid -->
+
+<%= @publication.name %>
+<br>
+<%= @edition.name %>
+<br>
+<br>
+<%= format_currency @edition.price %>
+<br>
+<%= format_date @edition.publish_date.to_date %>
