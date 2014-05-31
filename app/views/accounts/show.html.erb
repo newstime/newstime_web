@@ -47,6 +47,7 @@
     <tr>
       <th>Publication</th>
       <th>Status</th>
+      <th>Auto Renew</th>
       <th>Renewal Price</th>
       <th>Exp. Date</th>
       <th>Actions</th>
@@ -56,6 +57,7 @@
       <tr>
         <td><%= link_to sub.publication.name, sub.publication.url %></td>
         <td><%= sub.active ? "Active" : "Inactive" %></td>
+        <td></td>
         <td><%= sub.pricef %></td>
         <td></td>
         <td><%= link_to "Stop Renewal", "" %></td>
