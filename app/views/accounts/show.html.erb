@@ -1,77 +1,90 @@
 <div class="grid grid24 lead-space">
-  <div class="container wallet lead-space">
-    <%= @wallet.balancef %>
-    <label>Wallet Balance</label>
+
+  <div class="row">
+
+    <div class="col span9">
+
+      <div class="wallet">
+        <%= @wallet.balancef %>
+        <label>Wallet Balance</label>
+      </div>
+      <br><br>
+      <a class="btn" href="/funds/add">Add Value</a>
+    </div>
+
+    <div class="col span15">
+      <h3>Wallet Transactions</h3>
+      <table class="table transactions">
+        <tr>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>Balance</th>
+        </tr>
+        <% @wallet.transactions.each do |transaction| %>
+          <tr>
+            <td><%= format_date transaction.created_at %></td>
+            <td><%= raw transaction.desc_html %></td>
+            <td><%= format_transaction_amount transaction.amount %></td>
+            <td><%= format_transaction_amount transaction.balance %></td>
+          </tr>
+        <% end -%>
+      </table>
+
+      <br><br>
+
+      <h3>Purchases</h3>
+      <table class="table transactions">
+        <tr>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Total</th>
+        </tr>
+        <% current_user.purchases.each do |purchase| %>
+          <tr>
+            <td><%= format_date purchase.created_at %></td>
+            <td><%= raw purchase.desc_html %></td>
+            <td><%= format_transaction_amount purchase.total %></td>
+          </tr>
+        <% end -%>
+      </table>
+
+      <h3>Subscriptions</h3>
+      <table class="table">
+        <tr>
+          <th>Publication</th>
+          <th>Status</th>
+          <th>Auto Renew</th>
+          <th>Renewal Price</th>
+          <th>Exp. Date</th>
+          <th>Actions</th>
+
+        </tr>
+        <% current_user.subscriptions.each do |sub| %>
+          <tr>
+            <td><%= link_to sub.publication.name, sub.publication.url %></td>
+            <td><%= sub.active ? "Active" : "Inactive" %></td>
+            <td></td>
+            <td><%= sub.pricef %></td>
+            <td></td>
+            <td><%= link_to "Stop Renewal", "" %></td>
+          </tr>
+        <% end -%>
+      </table>
+
+      <br><br>
+
+      <a href="<%= newstime_press_url %>" target="_blank">Press</a><br>
+      <a href="<%= wallet_url %>">Wallet</a><br>
+      <a href="<%= library_url %>">Library</a><br>
+
+      Change Password<br>
+      Update Account Info<br>
+
+    </div>
+
   </div>
 
-  <a class="btn" href="/funds/add">Add Value</a>
 
-  <h3>Wallet Transactions</h3>
-  <table class="table transactions">
-    <tr>
-      <th>Date</th>
-      <th>Description</th>
-      <th>Amount</th>
-      <th>Balance</th>
-    </tr>
-    <% @wallet.transactions.each do |transaction| %>
-      <tr>
-        <td><%= format_date transaction.created_at %></td>
-        <td><%= raw transaction.desc_html %></td>
-        <td><%= format_transaction_amount transaction.amount %></td>
-        <td><%= format_transaction_amount transaction.balance %></td>
-      </tr>
-    <% end -%>
-  </table>
-
-  <br><br>
-
-  <h3>Purchases</h3>
-  <table class="table transactions">
-    <tr>
-      <th>Date</th>
-      <th>Description</th>
-      <th>Total</th>
-    </tr>
-    <% current_user.purchases.each do |purchase| %>
-      <tr>
-        <td><%= format_date purchase.created_at %></td>
-        <td><%= raw purchase.desc_html %></td>
-        <td><%= format_transaction_amount purchase.total %></td>
-      </tr>
-    <% end -%>
-  </table>
-
-  <h3>Subscriptions</h3>
-  <table class="table">
-    <tr>
-      <th>Publication</th>
-      <th>Status</th>
-      <th>Auto Renew</th>
-      <th>Renewal Price</th>
-      <th>Exp. Date</th>
-      <th>Actions</th>
-
-    </tr>
-    <% current_user.subscriptions.each do |sub| %>
-      <tr>
-        <td><%= link_to sub.publication.name, sub.publication.url %></td>
-        <td><%= sub.active ? "Active" : "Inactive" %></td>
-        <td></td>
-        <td><%= sub.pricef %></td>
-        <td></td>
-        <td><%= link_to "Stop Renewal", "" %></td>
-      </tr>
-    <% end -%>
-  </table>
-
-  <br><br>
-
-  <a href="<%= newstime_press_url %>" target="_blank">Press</a><br>
-  <a href="<%= wallet_url %>">Wallet</a><br>
-  <a href="<%= library_url %>">Library</a><br>
-
-  Change Password<br>
-  Update Account Info<br>
 
 </div>
