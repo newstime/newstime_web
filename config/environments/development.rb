@@ -32,4 +32,6 @@ Newsstand::Application.configure do
 
   # Configure default host for action mailer.
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  config.sass.line_comments = false
 end

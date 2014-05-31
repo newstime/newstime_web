@@ -8,6 +8,7 @@ Newsstand::Application.routes.draw do
   get 'newsrack'  => "pages#newsrack"
   get 'downloads' => 'downloads#download'
   get 'wallet'    => 'wallets#show'
+  get 'library' => 'libraries#show'
 
   get 'news_organization_sign_up' => 'pages#news_organization_sign_up', as: 'news_organization_sign_up'
 

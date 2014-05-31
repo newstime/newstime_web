@@ -5,7 +5,18 @@
   padding: 20px 0 75px;
   font-weight: 100;
 
+  h1, h2, h3 { margin: .5em 0 }
+
   .right-box {
+    padding: 10px;
+    border-top: 1px solid #777;
     float: right;
+    width: 350px;
+
+    label {
+      width: 150px;
+      display: inline-block;
+      text-align: right;
+    }
   }
 }
