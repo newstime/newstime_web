@@ -1,8 +1,10 @@
-<div class="container lead-space">
+<div class="grid grid24 lead-space">
   <div class="container wallet lead-space">
     <%= @wallet.balancef %>
     <label>Wallet Balance</label>
   </div>
+
+  <a class="btn" href="/funds/add">Add Value</a>
 
   <h3>Wallet Transactions</h3>
   <table class="table transactions">
@@ -40,12 +42,26 @@
     <% end -%>
   </table>
 
-  <br><br>
+  <h3>Renewing Subscriptions</h3>
+  <table class="table">
+    <tr>
+      <th>Publication</th>
+      <th>Status</th>
+      <th>Renewal Price</th>
+      <th>Exp. Date</th>
+      <th>Actions</th>
 
-  <div class="container">
-    <a href="/funds/add">Add Funds</a><br>
-    <a href="/funds/source">Link a Funding Source</a>
-  </div>
+    </tr>
+    <% current_user.subscriptions.each do |sub| %>
+      <tr>
+        <td><%= link_to sub.publication.name, sub.publication.url %></td>
+        <td><%= sub.active ? "Active" : "Inactive" %></td>
+        <td><%= sub.pricef %></td>
+        <td></td>
+        <td><%= link_to "Stop Renewal", "" %></td>
+      </tr>
+    <% end -%>
+  </table>
 
   <br><br>
 
@@ -55,10 +71,5 @@
 
   Change Password<br>
   Update Account Info<br>
-  Subscriptions<br>
-  <% current_user.subscriptions.each do |sub| %>
-    <li><%= link_to sub.publication.name, sub.publication.url %> &bull; <%= sub.pricef %> <a>Cancel</a> </li>
-  <% end -%>
-  <br>
 
 </div>
