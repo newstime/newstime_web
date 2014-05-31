@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140531014909) do
+ActiveRecord::Schema.define(version: 20140531181318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(version: 20140531014909) do
 
   add_index "edition_copies", ["edition_id"], name: "index_edition_copies_on_edition_id", using: :btree
   add_index "edition_copies", ["user_id"], name: "index_edition_copies_on_user_id", using: :btree
+
+  create_table "edition_purchases", force: true do |t|
+    t.integer  "edition_id"
+    t.integer  "user_id"
+    t.float    "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "edition_purchases", ["edition_id"], name: "index_edition_purchases_on_edition_id", using: :btree
+  add_index "edition_purchases", ["user_id"], name: "index_edition_purchases_on_user_id", using: :btree
 
   create_table "editions", force: true do |t|
     t.string   "name"
@@ -136,6 +147,21 @@ ActiveRecord::Schema.define(version: 20140531014909) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["username"], name: "index_users_on_username", using: :btree
+
+  create_table "wallet_transactions", force: true do |t|
+    t.integer  "wallet_id"
+    t.string   "type"
+    t.float    "amount"
+    t.float    "balance"
+    t.integer  "edition_id"
+    t.integer  "publication_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "wallet_transactions", ["edition_id"], name: "index_wallet_transactions_on_edition_id", using: :btree
+  add_index "wallet_transactions", ["publication_id"], name: "index_wallet_transactions_on_publication_id", using: :btree
+  add_index "wallet_transactions", ["wallet_id"], name: "index_wallet_transactions_on_wallet_id", using: :btree
 
   create_table "wallets", force: true do |t|
     t.integer  "user_id"

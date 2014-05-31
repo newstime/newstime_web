@@ -77,7 +77,7 @@ class EditionsController < ApplicationController
   def purchase
     @edition = Edition.find(params[:id])
     if current_user
-      current_user.buy_edition(@edition)
+      PurchaseEditionAction.new(current_user, @edition).preform
       redirect_to :back
     else
       redirect_to checkout_edition_path(@edition)

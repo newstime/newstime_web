@@ -40,4 +40,8 @@ class Edition < ActiveRecord::Base
     "/downloads?edition_id=#{id}"
   end
 
+  def read_now_url
+    "main.html"
+  end
+
 end

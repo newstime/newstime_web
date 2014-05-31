@@ -14,10 +14,6 @@ class User < ActiveRecord::Base
   has_many :editions, :through => :edition_copies
   #has_and_belongs_to_many :editions
 
-  def buy_edition(edition)
-    editions << edition unless editions.exists?(edition)
-  end
-
   has_many :subscriptions
 
   def subscribe_to_publication(publication)

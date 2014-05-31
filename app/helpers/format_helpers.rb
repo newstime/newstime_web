@@ -11,6 +11,17 @@ module FormatHelpers
     end
   end
 
+  def format_transaction_amount(value)
+    return unless value
+    if value.zero?
+      "$0.00"
+    elsif value > 0
+      "$%.2f" % value.round(2)
+    else
+      "($%.2f)" % value.round(2).abs
+    end
+  end
+
   def format_date(date)
     date.strftime("%m/%d/%Y")
   end

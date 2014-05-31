@@ -9,7 +9,9 @@
       <%= render 'purchase_button' %>
     <% end -%>
     </div>
-    <img src="cover.png" class="cover"></img>
+    <%= link_to @edition.read_now_url do %>
+      <img src="cover.png" class="cover"></img>
+    <% end -%>
   </div>
 </div>
 
