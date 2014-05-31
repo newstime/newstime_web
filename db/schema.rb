@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140523220849) do
+ActiveRecord::Schema.define(version: 20140531011709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 20140523220849) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.float    "price",           default: 0.0, null: false
+    t.float    "size"
+    t.string   "size_units"
   end
 
   add_index "editions", ["organization_id"], name: "index_editions_on_organization_id", using: :btree

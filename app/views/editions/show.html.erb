@@ -1,4 +1,4 @@
-<div class="container">
+<div class="grid grid24">
   <div class="edition-display">
     <a href="main.html">
       <img src="cover.png" class="cover"></img>
@@ -15,15 +15,19 @@
   </div>
 </div>
 
-<hr>
 
-<!-- Use a grid -->
+<div class="basement">
+  <div class="grid grid24">
+    <div class="right-box">
+      <label>Published:</label> <%= format_date @edition.publish_date.to_date %>
+      <br>
+      <label>Price:</label> <%= format_currency @edition.price %>
+      <br>
+      <label>Download Size:</label> <%= format_size @edition.size, @edition.size_units %>
+    </div>
 
-<%= @publication.name %>
-<br>
-<%= @edition.name %>
-<br>
-<br>
-<%= format_currency @edition.price %>
-<br>
-<%= format_date @edition.publish_date.to_date %>
+    <h1><%= @publication.name %></h1>
+    <h2><%= @edition.name %></h2>
+    <br>
+  </div>
+</div>

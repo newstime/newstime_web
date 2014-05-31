@@ -1,5 +1,6 @@
 module ApplicationHelper
   include NavbarHelper
+  include FormatHelpers
 
   def parent_layout(layout)
     @view_flow.set(:layout,output_buffer)
@@ -73,20 +74,6 @@ module ApplicationHelper
 
   def current_organization
     current_user.try(:current_organization)
-  end
-
-  def format_currency(value)
-    if value <= 0
-      "FREE"
-    elsif value < 1.00
-      "%.f¢" % (value.round(2)*100)
-    else
-      "$%.2f" % value.round(2)
-    end
-  end
-
-  def format_date(date)
-    date.strftime("%m/%d/%Y")
   end
 
 end
