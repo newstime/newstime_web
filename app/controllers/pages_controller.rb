@@ -12,7 +12,13 @@ class PagesController < ApplicationController
     @page = Page.find_by_path(params[:path])
 
     if @page
-      render @page.class.to_s.underscore
+      case @page
+      when PublicationProfile
+        @editions = @page.publication.editions
+        render :publication_profile
+      else
+        render @page.class.to_s.underscore
+      end
     else
       render "404", status: 404
     end
