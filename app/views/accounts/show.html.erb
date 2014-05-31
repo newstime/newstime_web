@@ -4,7 +4,7 @@
     <label>Wallet Balance</label>
   </div>
 
-  <h3>Transactions</h3>
+  <h3>Wallet Transactions</h3>
   <table class="table transactions">
     <tr>
       <th>Date</th>
@@ -18,6 +18,24 @@
         <td><%= raw transaction.desc_html %></td>
         <td><%= format_transaction_amount transaction.amount %></td>
         <td><%= format_transaction_amount transaction.balance %></td>
+      </tr>
+    <% end -%>
+  </table>
+
+  <br><br>
+
+  <h3>Purchases</h3>
+  <table class="table transactions">
+    <tr>
+      <th>Date</th>
+      <th>Description</th>
+      <th>Total</th>
+    </tr>
+    <% current_user.purchases.each do |purchase| %>
+      <tr>
+        <td><%= format_date purchase.created_at %></td>
+        <td><%= raw purchase.desc_html %></td>
+        <td><%= format_transaction_amount purchase.total %></td>
       </tr>
     <% end -%>
   </table>

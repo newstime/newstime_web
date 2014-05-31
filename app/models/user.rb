@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
   belongs_to :current_organization, class_name: "Organization"
   has_one :wallet
 
+  has_many :purchases, order: 'created_at DESC'
+
+
   has_many :edition_copies
   has_many :editions, :through => :edition_copies
   #has_and_belongs_to_many :editions

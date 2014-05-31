@@ -1,8 +1,8 @@
-class EditionPurchaseWalletTransaction < WalletTransaction
+class EditionCopyPurchaseWalletTransaction < WalletTransaction
   belongs_to :wallet
-  belongs_to :edition
+  belongs_to :edition_copy
+  has_one :edition, through: :edition_copy
   has_one :publication, through: :edition
-
 
   def desc_html
     <<-HTML

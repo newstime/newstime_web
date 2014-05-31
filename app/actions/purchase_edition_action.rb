@@ -18,27 +18,27 @@ class PurchaseEditionAction
     raise "Insufficient funds for purchase" if wallet.balance < edition.price
 
 
-    EditionPurchase.transaction do
-      # Record edition purchase for the edition.
-      EditionPurchase.create(edition: edition, user: user, price: edition.price)
+    ActiveRecord::Base.transaction do
+      ## Create EditionCopy for User
+      edition_copy = EditionCopy.create(user: user, edition: edition) # Should include license to read.
 
-        # Compute amounts
-        debit_amount = -edition.price
-        new_wallet_balance = (wallet.balance - edition.price).round(2)
+      ## Create Purchase Record
+      EditionCopyPurchase.create(edition_copy: edition_copy, user: user, total: edition.price)
 
-        # Record edition purchase wallet transaction
-        EditionPurchaseWalletTransaction.create(
-          wallet: wallet,
-          edition: edition,
-          amount: debit_amount,
-          balance: new_wallet_balance
-        )
+      ## Debit Wallet
+      debit_amount = -edition.price
+      new_wallet_balance = (wallet.balance - edition.price).round(2)
 
-        # Update Wallet Balance
-        wallet.update_attributes(balance: new_wallet_balance)
+      # Record edition purchase wallet transaction
+      EditionCopyPurchaseWalletTransaction.create(
+        wallet: wallet,
+        edition_copy: edition_copy,
+        amount: debit_amount,
+        balance: new_wallet_balance
+      )
 
-      # Issue Copy to User
-      EditionCopy.create(user: user, edition: edition) # Should include license to read.
+      # Update Wallet Balance
+      wallet.update_attributes(balance: new_wallet_balance)
     end
   end
 

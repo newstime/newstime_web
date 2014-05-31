@@ -1,7 +1,7 @@
 class Wallet < ActiveRecord::Base
   belongs_to :user
 
-  has_many :transactions, class_name: 'WalletTransaction'
+  has_many :transactions, class_name: 'WalletTransaction', order: 'created_at DESC'
 
   def balancef
     if balance < 1.00
