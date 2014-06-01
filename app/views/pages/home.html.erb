@@ -1,23 +1,6 @@
 <%= render 'breadcrumbs' %>
 
-<div class="container newsrack">
-  <% @editions.each_slice(4) do |editions| %>
-    <div class="shelf clearfix">
-      <% editions.each do |edition| %>
-        <div class="edition">
-          <a href="<%= edition.publication.slug %>/<%= edition.slug %>/">
-            <%= image_tag edition.cover_url %>
-          </a>
-        </div>
-      <% end -%>
-    </div>
-  <% end -%>
-
-</div>
-<br>
-<br>
-<br>
-<br>
+<%= render 'newsrack' %>
 
 <div class="container">
   <div class="news-org-sign-up-promo">
