@@ -18,9 +18,9 @@
       $height: 188px;
       height: $height;
       width: $height * 1.6;
-      background-color: white;
+      background-color: #eee;
       margin-left: -4px;
-      img { width: 100%; }
+      img { width: 100%; height: $height; }
 
       &:hover {
         top: -20px;
