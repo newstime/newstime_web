@@ -61,13 +61,7 @@
     margin-top: 0;
   }
 
-  /*margin-left: 30px;*/
-  &:nth-child(odd) {
-    /*margin-left: -30px;*/
-  }
-
   .edition {
-    img { width: 280px; height: 175px; }
     display: inline-block;
     box-shadow: 0 -4px 4px #ddd;
     position: relative;
@@ -78,14 +72,12 @@
     width: $height * 1.6;
     background-color: white;
     margin-left: -4px;
+    img { width: 100%; }
 
     &:hover {
       top: -20px;
-      /*margin-top: -20px;*/
     }
     transition: top .2s ease-in-out;
-
-    /*transition: margin-top .2s ease-in-out;*/
   }
 }
 
