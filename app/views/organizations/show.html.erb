@@ -1,7 +1,7 @@
 <div class="container">
   <h1><%= current_organization.name %></h1>
-  <%= link_to "Add Edition", new_edition_path %><br>
-  <%= link_to "Add Publication", new_publication_path %>
+  <%= link_to "Publish New Edition", new_edition_path %><br>
+  <%= link_to "Setup New Publication", new_publication_path %>
 
   <h3>Publications</h3>
   <% current_organization.publications.each do |pub| %>
