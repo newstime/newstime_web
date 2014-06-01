@@ -1,6 +1,6 @@
 <div class="newsrack">
   <% @editions.each_slice(4) do |editions| %>
-    <div class="shelf clearfix">
+    <div class="shelf">
       <% editions.each do |edition| %>
         <div class="edition">
           <a href="<%= edition.publication.slug %>/<%= edition.slug %>/">
