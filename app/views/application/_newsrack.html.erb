@@ -1,10 +1,10 @@
-<div class="newsrack">
+<div class="newsrack rumpled">
   <% @editions.each_slice(4) do |editions| %>
     <div class="shelf">
       <% editions.each do |edition| %>
         <div class="edition">
           <a href="<%= edition.publication.slug %>/<%= edition.slug %>/">
-            <%= image_tag edition.cover_url %>
+            <%#= image_tag edition.cover_url %>
           </a>
         </div>
       <% end -%>
