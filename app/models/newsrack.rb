@@ -9,6 +9,10 @@ class Newsrack < ActiveRecord::Base
     newsrack
   end
 
+  def self.share_path
+    Rails.root.join("share/newsracks")
+  end
+
   def editions
     @editions ||= begin
       _editions = Edition.find(edition_ids.split(',')).group_by(&:id)
