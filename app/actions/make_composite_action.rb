@@ -42,8 +42,9 @@ class MakeCompositeAction
 
     # Create hash of image
     hash = Digest::MD5.hexdigest(File.read('tmp/stitched.png'))
-    hash_filename = "tmp/stitched-#{hash}.png"
-    `mv  tmp/stitched.png #{hash_filename}`
+    hash_filename = "newsrack-#{hash}.png"
+    `mkdir -p share/newsracks` # Ensure directory
+    `mv  tmp/stitched.png share/newsracks/#{hash_filename}`
 
     # Rename base on hash, and set sprite_path on server
     @sprite_path = hash_filename

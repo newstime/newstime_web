@@ -10,7 +10,7 @@ Newsstand::Application.routes.draw do
   get 'wallet'    => 'wallets#show'
   get 'library' => 'libraries#show'
 
-  get 'newsrack_sprite/:id' => 'newsracks#sprite'
+  get 'newsrack_sprite/:path' => 'newsracks#sprite'
 
   get 'news_organization_sign_up' => 'pages#news_organization_sign_up', as: 'news_organization_sign_up'
 
