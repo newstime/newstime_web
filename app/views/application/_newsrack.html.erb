@@ -1,3 +1,9 @@
+<style type="text/css" media="screen">
+  .edition a {
+    background: url('<%= "/newsrack_sprite/#{@newsrack.id}" %>');
+  }
+</style>
+
 <div class="newsrack rumpled">
   <% @editions.each_slice(4) do |editions| %>
     <div class="shelf">

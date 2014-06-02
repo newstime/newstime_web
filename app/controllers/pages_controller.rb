@@ -1,7 +1,8 @@
 class PagesController < ApplicationController
 
   def home
-    @editions = Edition.all.order(created_at: :desc).take(24)
+    @newsrack = Newsrack.last
+    @editions = @newsrack.editions
   end
 
   def newsrack

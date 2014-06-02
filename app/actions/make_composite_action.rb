@@ -1,5 +1,8 @@
+require 'digest/md5'
+
 class MakeCompositeAction
 
+  attr_reader :sprite_path
 
   def initialize(editions)
     @editions = editions
@@ -36,9 +39,14 @@ class MakeCompositeAction
       end
       current_column=0; current_row+=1
     end
-    #
-    #   Keep track of x y position
-    #   Compose image
+
+    # Create hash of image
+    hash = Digest::MD5.hexdigest(File.read('tmp/stitched.png'))
+    hash_filename = "tmp/stitched-#{hash}.png"
+    `mv  tmp/stitched.png #{hash_filename}`
+
+    # Rename base on hash, and set sprite_path on server
+    @sprite_path = hash_filename
 
   end
 
