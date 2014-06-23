@@ -1,0 +1,46 @@
+<div class="grid grid24 lead-space">
+  <%= render 'accounts_menu', selected: :wallet %>
+</div>
+
+<div class="grid grid24 lead-space">
+
+  <div class="wallet">
+    <%= @wallet.balancef %>
+    <label>Wallet Balance</label>
+  </div>
+
+  <div class="row">
+
+    <br>
+
+    <div class="col offset4 span16">
+
+      <h3>Wallet Transactions</h3>
+      <table class="table transactions">
+        <tr>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>Balance</th>
+        </tr>
+        <% @wallet.transactions.each do |transaction| %>
+          <tr>
+            <td><%= format_date transaction.created_at %></td>
+            <td><%= raw transaction.desc_html %></td>
+            <td><%= format_transaction_amount transaction.amount %></td>
+            <td><%= format_transaction_amount transaction.balance %></td>
+          </tr>
+        <% end -%>
+      </table>
+
+    </div>
+  </div>
+
+</div>
+
+
+
+<div class="container" style="display: none;">
+  <a href="/funds/add">Add Funds</a><br>
+  <a href="/funds/source">Link a Funding Source</a>
+</div>

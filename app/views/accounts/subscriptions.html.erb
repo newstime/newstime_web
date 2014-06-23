@@ -1,0 +1,35 @@
+<div class="grid grid24 lead-space">
+
+  <%= render 'accounts_menu', selected: :subscriptions %>
+
+  <div class="row">
+    <br>
+
+    <div class="col offset4 span16">
+      <h3>Subscriptions</h3>
+      <table class="table">
+        <tr>
+          <th>Publication</th>
+          <th>Status</th>
+          <th>Auto Renew</th>
+          <th>Renewal Price</th>
+          <th>Exp. Date</th>
+          <th>Actions</th>
+
+        </tr>
+        <% current_user.subscriptions.each do |sub| %>
+          <tr>
+            <td><%= link_to sub.publication.name, sub.publication.url %></td>
+            <td><%= sub.active ? "Active" : "Inactive" %></td>
+            <td></td>
+            <td><%= sub.pricef %></td>
+            <td></td>
+            <td><%= link_to "Stop Renewal", "" %></td>
+          </tr>
+        <% end -%>
+      </table>
+
+    </div>
+  </div>
+
+</div>

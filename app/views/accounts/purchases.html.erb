@@ -1,0 +1,28 @@
+<div class="grid grid24 lead-space">
+
+  <%= render 'accounts_menu', selected: :purchases %>
+
+  <div class="row">
+
+    <div class="col offset4 span16">
+      <br>
+      <h3>Purchases</h3>
+      <table class="table transactions">
+        <tr>
+          <th>Date</th>
+          <th>Description</th>
+          <th class="align-right">Total</th>
+        </tr>
+        <% current_user.purchases.each do |purchase| %>
+          <tr>
+            <td><%= format_date purchase.created_at %></td>
+            <td><%= raw purchase.desc_html %></td>
+            <td class="align-right"><%= format_transaction_amount purchase.total %></td>
+          </tr>
+        <% end -%>
+      </table>
+
+    </div>
+  </div>
+
+</div>

@@ -1,26 +1,10 @@
 <div class="grid grid24 lead-space">
 
-  <br>
-
-  <div class="row">
-
-    <div class="col span24">
-
-      <ul class="accounts-menu">
-        <li>Wallet</li>
-        <li>Purchases</li>
-        <li>Subscriptions</li>
-        <li>Change Password</li>
-        <li>Update Account Info</li>
-      </ul>
-
-    </div>
-  </div>
+  <%= render 'accounts_menu' %>
 
   <div class="row">
 
     <div class="col span9">
-
 
 
       <div class="wallet">
@@ -94,7 +78,7 @@
       <br><br>
 
       <a href="<%= newstime_press_url %>" target="_blank">Press</a><br>
-      <a href="<%= wallet_url %>">Wallet</a><br>
+      <a href="<%= account_wallet_url %>">Wallet</a><br>
       <a href="<%= library_url %>">Library</a><br>
 
       Change Password<br>

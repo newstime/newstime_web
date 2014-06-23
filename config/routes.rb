@@ -7,7 +7,6 @@ Newsstand::Application.routes.draw do
   get 'search'    => 'search#search' #, constraints: { :q => /.+/ }
   get 'newsrack'  => "pages#newsrack"
   get 'downloads' => 'downloads#download'
-  get 'wallet'    => 'wallets#show'
   get 'library' => 'libraries#show'
 
   get 'newsrack_sprite/:path' => 'newsracks#sprite'
@@ -36,7 +35,13 @@ Newsstand::Application.routes.draw do
     post ':edition_slug' => 'editions#create'
   end
 
-  get 'account' => 'accounts#show'
+  get 'account'         => 'accounts#show'
+  get 'wallet'          => 'accounts#wallet'   ,       as: :account_wallet
+  get 'purchases'       => 'accounts#purchases',       as: :account_purchases
+  get 'subscriptions'   => 'accounts#subscriptions',   as: :account_subscriptions
+  get 'change_password' => 'accounts#change_password', as: :account_change_password
+  get 'update_info'     => 'accounts#update_info', as: :account_update_info
+
 
   get "*path", :to => "pages#show"
 
