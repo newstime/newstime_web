@@ -14,4 +14,7 @@ class AccountsController < ApplicationController
     @wallet = current_user.wallet
   end
 
+  def change_password
+  end
+
 end
