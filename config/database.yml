@@ -28,5 +28,6 @@ production:
   encoding: unicode
   database: ntstore_production
   username: ntstore
+  host: localhost
   pool: 5
   timeout: 5000
