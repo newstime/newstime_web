@@ -1,10 +1,12 @@
 #!/bin/sh
 
 # Boot new app
-kill -USR2 $(cat tmp/pids/unicorn.pid)
+#kill -USR2 $(cat tmp/pids/unicorn.pid)
 
 # Tear down old
-kill -WINCH $(cat tmp/pids/unicorn.pid.oldbin)
-kill -QUIT $(cat tmp/pids/unicorn.pid.oldbin)
+#kill -WINCH $(cat tmp/pids/unicorn.pid.oldbin)
+#kill -QUIT $(cat tmp/pids/unicorn.pid.oldbin)
+
+sudo /etc/init.d/unicorn stop /etc/unicorn/newstime-store.conf
 
 echo "restarting unicorn app"
