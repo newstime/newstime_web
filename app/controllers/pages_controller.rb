@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 
   def home
     @newsrack = Newsrack.last
-    @editions = @newsrack.editions
+    @editions = @newsrack.try(:editions)
   end
 
   def newsrack
