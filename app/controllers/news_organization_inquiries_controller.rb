@@ -1,0 +1,23 @@
+class NewsOrganizationInquiriesController < ApplicationController
+
+  skip_before_filter :verify_authenticity_token
+
+  def new
+  end
+
+  def create
+    name = params[:name]
+    email = params[:email]
+    organization = params[:organization]
+
+    # Send email
+    # TODO: Put in background, using sidekiq
+    NewsOrganizationInquiriesMailer.new_inquiry(name, email, organization).deliver
+
+    redirect_to action: :success
+  end
+
+  def success
+  end
+
+end

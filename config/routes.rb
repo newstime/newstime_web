@@ -11,7 +11,11 @@ Newsstand::Application.routes.draw do
 
   get 'newsrack_sprite/:path' => 'newsracks#sprite'
 
-  get 'news_organization_sign_up' => 'pages#news_organization_sign_up', as: 'news_organization_sign_up'
+  resources :news_organization_inquiries, only: [:new, :create] do
+    collection do
+      get :success
+    end
+  end
 
   get "/organization" => "organizations#show"
 

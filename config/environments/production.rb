@@ -71,6 +71,22 @@ Newsstand::Application.configure do
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
 
+  # Configure default host for action mailer.
+  config.action_mailer.default_url_options = { :host => 'www.newstime.io' }
+
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # SMTP Settings
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :user_name => ENV["SMTP_USERNAME"],
+    :password => ENV["SMTP_PASSWORD"],
+    :domain => ENV["SMTP_DOMAIN"],
+    :address => 'smtp.mandrillapp.com',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
 end

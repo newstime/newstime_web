@@ -33,5 +33,16 @@ Newsstand::Application.configure do
   # Configure default host for action mailer.
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :user_name => '2168132fe139ae1a7',
+    :password => '20eb66770fc00b',
+    :address => 'mailtrap.io',
+    :domain => 'mailtrap.io',
+    :port => '2525',
+    :authentication => :cram_md5,
+    :enable_starttls_auto => true
+  }
+
   config.sass.line_comments = false
 end

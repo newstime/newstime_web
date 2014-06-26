@@ -38,15 +38,16 @@ input {
       quality content and make more money.</p>
 
     <p>Leave us your information so we may contact you with more details.</p>
+    <form action="<%= news_organization_inquiries_path %>" method="post" accept-charset="utf-8">
+      <div class="form-inputs">
 
-    <div class="form-inputs">
-
-      <input class="form-control" placeholder="Name"><br>
-      <input class="form-control" placeholder="Email"><br>
-      <input class="form-control" placeholder="Organization"><br>
-    </div>
-    <div class="form-actions">
-      <input class="btn" type="submit" />
-    </div>
+        <input class="form-control" placeholder="Name" name="name"><br>
+        <input class="form-control" placeholder="Email" name="email"><br>
+        <input class="form-control" placeholder="Organization" name="organization"><br>
+      </div>
+      <div class="form-actions">
+        <input class="btn" type="submit" />
+      </div>
+    </form>
   </div>
 </div>
