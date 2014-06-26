@@ -7,6 +7,6 @@
 #kill -WINCH $(cat tmp/pids/unicorn.pid.oldbin)
 #kill -QUIT $(cat tmp/pids/unicorn.pid.oldbin)
 
-/etc/init.d/unicorn restart /etc/unicorn/newstime-store.conf
+# /etc/init.d/unicorn restart /etc/unicorn/newstime-store.conf
 
-echo "restarting unicorn app"
+# echo "restarting unicorn app"
