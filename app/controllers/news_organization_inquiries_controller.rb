@@ -12,7 +12,7 @@ class NewsOrganizationInquiriesController < ApplicationController
 
     # Send email
     # TODO: Put in background, using sidekiq
-    NewsOrganizationInquiriesMailer.new_inquiry(name, email, organization).deliver
+    NewsOrganizationInquiriesMailer.delay.new_inquiry(name, email, organization).deliver
 
     redirect_to action: :success
   end
