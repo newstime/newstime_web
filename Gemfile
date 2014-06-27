@@ -19,6 +19,7 @@ gem 'binding_of_caller'
 gem "devise"
 gem "paperclip"
 gem 'draper'
+gem 'sidekiq'
 
 gem 'bson'
 gem 'bson_ext'
