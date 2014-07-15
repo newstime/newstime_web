@@ -1,0 +1,8 @@
+# Site settings
+title: Newstime Blog
+baseurl: ""
+url: "http://blog.newstime.io"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
