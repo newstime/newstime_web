@@ -36,7 +36,7 @@ Newsstand::Application.routes.draw do
 
     scope ":publication_slug" do
       get ':edition_slug' => 'editions#show'
-      get ':edition_slug/*path' => 'editions#browse'
+      get ':edition_slug/*path' => 'edition_browse#browse'
 
       post ':edition_slug' => 'editions#create'
     end
@@ -56,8 +56,10 @@ Newsstand::Application.routes.draw do
   constraints subdomain: "read" do
 
     scope ":publication_slug" do
-      get ':edition_slug/*path' => 'editions#browse'
+      get ':edition_slug/*path' => 'edition_browse#browse'
     end
+
+    get "*path", :to => "edition_browse#www_redirect"
 
   end
 
