@@ -20,7 +20,9 @@ class EditionsController < ApplicationController
 
   def browse
     # Only serve off read domain
-    redirect_to request.url.sub(request.subdomain, 'read') unless request.subdomain == "read"
+    unless request.subdomain == "read"
+      redirect_to request.url.sub(request.subdomain, 'read') and return
+    end
 
     @publication = Publication.find_by(slug: params[:publication_slug])
     @edition = @publication.editions.find_by(slug: params[:edition_slug])
