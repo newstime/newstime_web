@@ -55,12 +55,12 @@ Newsstand::Application.routes.draw do
 
   constraints subdomain: "read" do
 
-    root :to => redirect('www.newstime.io')
 
     scope ":publication_slug" do
       get ':edition_slug/*path' => 'edition_browse#browse'
     end
 
+    get "/", :to => "edition_browse#www_redirect"
     get "*path", :to => "edition_browse#www_redirect"
 
   end
