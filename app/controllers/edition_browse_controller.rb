@@ -24,6 +24,7 @@ class EditionBrowseController < ApplicationController
           else
             # Grant pass
             flash[:pass_count] = pass_count - 1
+            expires_now # Prevent caching of HTML
           end
         end
       end
