@@ -41,5 +41,6 @@ back for further developments as things are revealed and released.
 Thank you for your time and attention, and here is to great things in the future
 to come!
 
-Blake Taylor
+
+Blake Taylor <br>
 Founder, [Newstime](http://www.newstime.io/)
