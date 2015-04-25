@@ -3,6 +3,7 @@ Newsstand::Application.routes.draw do
   constraints subdomain: "www" do
 
     devise_for :users, :controllers => { :sessions => "sessions" }
+    devise_for :admins
 
     root to: "pages#home"
 
@@ -10,6 +11,7 @@ Newsstand::Application.routes.draw do
     get 'newsrack'  => "pages#newsrack"
     get 'downloads' => 'downloads#download'
     get 'library' => 'libraries#show'
+    get 'admin' => 'admin/pages#dashboard'
 
     get 'newsrack_sprite/:path' => 'newsracks#sprite'
 
@@ -54,7 +56,6 @@ Newsstand::Application.routes.draw do
   end
 
   constraints subdomain: "read" do
-
 
     scope ":publication_slug" do
       get ':edition_slug/*path' => 'edition_browse#browse'
