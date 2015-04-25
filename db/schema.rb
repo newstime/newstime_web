@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140602170342) do
+ActiveRecord::Schema.define(version: 20150425192709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,14 @@ ActiveRecord::Schema.define(version: 20140602170342) do
   end
 
   add_index "editions_users", ["edition_id", "user_id"], name: "editions_users_index", unique: true, using: :btree
+
+  create_table "news_organization_inquiries", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "organization"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "newsracks", force: true do |t|
     t.string   "sprite_path"
