@@ -1,0 +1,36 @@
+.editions-checkout {
+  position: relative;
+
+  .purchase-item {
+    width: 400px;
+    border-left: 1px solid #eee;
+    position: absolute;
+    left: 680px;
+    top: 50px;
+    padding-left: 20px;
+    min-height: 500px;
+
+    img {
+      width: 400px;
+    }
+
+  }
+
+  .checkout-form {
+    width: 700px;
+  }
+
+  h2 {
+    margin: 5px 0;
+  }
+
+  h3 {
+    margin: 5px 0;
+    .edition-price {
+      float: right;
+    }
+  }
+
+
+
+}

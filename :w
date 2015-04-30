@@ -1,0 +1,23 @@
+<div class="container">
+
+  <h1>Sign in or create an account to checkout</h1>
+
+  <div class="right-column" style="float: right">
+
+    <%= link_to "Sign Up", new_user_registration_path %><br>
+    Sign In
+  </div>
+  <div class="purchase-item">
+    <h2><%= @edition.publication.name %></h2>
+    <h3>
+      <%= @edition.name %><br>
+      <%= format_currency @edition.price %>
+    </h3>
+    <%= image_tag @edition.cover_url, width: 700 %><br>
+  </div>
+
+  <div>
+
+  </div>
+
+</div>
