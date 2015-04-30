@@ -51,9 +51,22 @@ class EditionsController < ApplicationController
   end
 
   def purchase
+    # Authenticate user if present.
+    unless current_user
+      user_params = params['user']
+      if user_params
+        user = User.find_by_email(user_params['email'])
+        if user && user.valid_password?(user_params['password'])
+          sign_in user
+        end
+      end
+    end
+
     @edition = Edition.find(params[:id])
     if current_user
-      PurchaseEditionAction.new(current_user, @edition).preform
+      unless current_user.editions.exists?(@edition)
+        PurchaseEditionAction.new(current_user, @edition).preform
+      end
       redirect_to :back
     else
       redirect_to checkout_edition_path(@edition)
