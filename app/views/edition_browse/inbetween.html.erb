@@ -6,13 +6,14 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <%= content_for(:head) %>
+
 </head>
 <body class="grey">
 
   <br>
   <div class="container insert text-center inbetween">
     <h1>
-      <%= link_to 'Continue to Content', @continue_to, class: "continue-link" %>
+      <%= link_to 'Continue to Content', @continue_to, class: "continue-link", onclick: "location.reload(); return false;" %>
     </h1>
     <br>
     <br>
@@ -34,7 +35,7 @@
     <p>
       <%= render 'purchase_button' %>
       or&nbsp;
-      <%= link_to 'Continue to Content', @continue_to, class: "continue-link" %>
+      <%= link_to 'Continue to Content', @continue_to, class: "continue-link", onclick: "location.reload(); return false;" %>
     </p>
   <div>
 
