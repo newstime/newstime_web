@@ -1,23 +1,22 @@
 ul.accounts-menu {
   padding: 0;
-  list-style-type: none;
   margin: 20px auto 0;
-  width: 509px;
+  text-align: center;
 
   li {
     padding: 5px 10px;
     margin: 0;
-    margin-left: -1px;
-    float: left;
-    border: 1px solid #ccc;
+    border-bottom: 1px solid #eee;
+    list-style: none;
+    display: inline-block;
 
     &:first-child {
       margin-left: 0;
-      border-radius: 4px 0 0 4px;
+      /*border-radius: 4px 0 0 4px;*/
     }
 
     &:last-child {
-      border-radius: 0 4px 4px 0;
+      /*border-radius: 0 4px 4px 0;*/
     }
   }
 }
