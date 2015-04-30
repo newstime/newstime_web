@@ -76,4 +76,6 @@ module ApplicationHelper
     current_user.try(:current_organization)
   end
 
+
+
 end

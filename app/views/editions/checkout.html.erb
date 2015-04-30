@@ -2,17 +2,68 @@
 
 
   <div class="checkout-form">
-    <h1>Checkout</h1>
-    <p>Sign in or create an account to checkout</p>
-    <%= link_to "Sign Up", new_user_registration_path %><br>
-    <%= link_to "Sign In", new_user_session_path %><br>
+
+    <% unless params[:sign_up] %>
+
+      <div class="login-form">
+        <h2>Sign In</h2>
+        <%= simple_form_for(User.new, :as => :user, :url => session_path(:user)) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email, :required => false, label: false, placeholder: 'Email', :autofocus => true %>
+            <%= f.input :password, :required => false, label: false, placeholder: 'Password' %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Sign in", class: 'btn-default' %>
+            <p>
+              Don't have an account?
+              <%= link_to "Sign up", checkout_edition_path(@edition, sign_up: true) %>
+            </p>
+          </div>
+        <% end %>
+        <br>
+      </div>
+
+    <% else %>
+
+      <div class="login-form">
+        <h2>Sign Up</h2>
+        <%= simple_form_for(User.new, :as => :user, :url => registration_path(:user)) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email, placeholder: "Email", label: false, :autofocus => true %>
+            <%= f.input :password, placeholder: "Password", label: false %>
+            <%= f.input :password_confirmation, placeholder: "Password Confirmation", label: false%>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Sign up" %>
+            <p>
+              Already have an account?
+              <%= link_to "Sign in", checkout_edition_path(@edition) %>
+            </p>
+          </div>
+        <% end %>
+
+      </div>
+
+    <% end -%>
+
+
+    <%#= link_to "Sign Up", new_user_registration_path %><br>
+    <%#= link_to "Sign In", new_user_session_path %><br>
   </div>
 
   <div class="purchase-item">
     <br>
-    <h2><%= @edition.publication.name %></h2>
+
+    <% if params[:sign_up] %>
+      <h1>Sign up to purchase</h1>
+    <% else %>
+      <h1>Sign in to purchase</h1>
+    <% end -%>
+    <h3 class="publication-name"><%= @edition.publication.name %></h3>
     <h3>
-      <%= link_to @edition.name, @edition.url %>
+      <span class="edition-name"><%= link_to @edition.name, @edition.url %></span>
       <span class="edition-price"><%= format_currency @edition.price %></span>
     </h3>
     <br>

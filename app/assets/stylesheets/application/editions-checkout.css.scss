@@ -2,26 +2,38 @@
   position: relative;
 
   .purchase-item {
-    width: 400px;
+    width: 500px;
     border-left: 1px solid #eee;
     position: absolute;
-    left: 680px;
+    left: 550px;
     top: 50px;
-    padding-left: 20px;
+    padding-left: 50px;
     min-height: 500px;
 
     img {
-      width: 400px;
+      width: 500px;
     }
-
   }
 
   .checkout-form {
-    padding-top: 40px;
-    width: 700px;
+    padding-top: 100px;
+    width: 550px;
+
+    .login-form {
+      width: 300px;
+      margin: 50px auto;
+
+      p {
+        margin-left: 10px;
+      }
+    }
+
+    hr {
+      width: 300px;
+    }
   }
 
-  h2 {
+  h3 {
     margin: 5px 0;
   }
 

@@ -34,6 +34,7 @@ Newsstand::Application.routes.draw do
       end
     end
 
+
     resources :publications do
       member do
         put :subscribe
