@@ -2,13 +2,10 @@
 
 
   <div class="checkout-form">
-    <br>
-    <br>
-    <br>
     <h1>Checkout</h1>
     <p>Sign in or create an account to checkout</p>
     <%= link_to "Sign Up", new_user_registration_path %><br>
-    Sign In
+    <%= link_to "Sign In", new_user_session_path %><br>
   </div>
 
   <div class="purchase-item">
@@ -20,14 +17,9 @@
     </h3>
     <br>
 
-
     <%= link_to @edition.url do %>
       <%= image_tag @edition.cover_url%><br>
     <% end -%>
-
-  </div>
-
-  <div>
 
   </div>
 
