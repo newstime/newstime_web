@@ -3,14 +3,15 @@
   <h1>Sign in or create an account to purchase</h1>
 
   <div class="right-column" style="float: right">
-    Sign Up<br>
+
+    <%= link_to "Sign Up", new_user_registration_path %><br>
     Sign In
   </div>
   <div class="purchase-item">
     <%= @edition.publication.name %><br>
     <%= image_tag @edition.cover_url, width: 200 %><br>
     <%= @edition.name %><br>
-    <%= @edition.pricef %>
+    <%= format_currency @edition.price %>
   </div>
 
 </div>

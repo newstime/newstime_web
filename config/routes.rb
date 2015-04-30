@@ -2,8 +2,8 @@ Newsstand::Application.routes.draw do
 
   constraints subdomain: "www" do
 
-    devise_for :users, :controllers => { :sessions => "sessions" }
-    devise_for :admins
+    devise_for :users, :controllers => { :sessions => "sessions", :registrations => "registrations" }
+    devise_for :admins, :controllers => { :sessions => "sessions", :registrations => "registrations" }
 
     root to: "pages#home"
 
@@ -12,6 +12,10 @@ Newsstand::Application.routes.draw do
     get 'downloads' => 'downloads#download'
     get 'library' => 'libraries#show'
     get 'admin' => 'admin/pages#dashboard'
+
+    namespace 'admin' do
+      resources :users
+    end
 
     get 'newsrack_sprite/:path' => 'newsracks#sprite'
 
