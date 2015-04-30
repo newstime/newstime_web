@@ -7,6 +7,8 @@ class EditionCopyPurchase < Purchase
 
   ## Methods
   def desc_html
-    "Edition #{link_to edition.name, edition.url}"
+    if edition
+      "Edition #{link_to edition.name, edition.url}"
+    end
   end
 end
