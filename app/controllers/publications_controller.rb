@@ -26,15 +26,6 @@ class PublicationsController < ApplicationController
     redirect_to :back
   end
 
-  def manage
-    @publication = current_user.publications.find_by_slug(params[:id])
-  end
-
-  def destroy
-    @publication = current_user.publications.find_by_slug(params[:id])
-    @publication.destroy
-  end
-
 private
 
   def publication_params

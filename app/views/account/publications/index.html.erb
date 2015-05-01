@@ -1,0 +1,40 @@
+
+<div class="grid grid24 lead-space">
+  <%= render 'accounts/accounts_menu', selected: :publications %>
+
+  <div class="row">
+    <br>
+
+    <div class="col offset4 span16">
+      <h3>Publications</h3>
+      <p>Manage your publications from this page.</p>
+      <table class="table">
+        <tr>
+          <th>Publication</th>
+          <th>
+          </th>
+
+        </tr>
+        <% current_user.publications.each do |publication| %>
+          <tr>
+            <td><%= link_to publication.name, publication_url(publication) %></td>
+            <td>
+              <%= link_to "Manage",       account_publication_url(publication) %> |
+              <%= link_to "Publish New Edition",  new_edition_account_publication_url(publication) %>
+
+            </td>
+          </tr>
+        <% end -%>
+
+        <tr>
+          <td colspan="2">
+            <%= link_to "+ New Publication", new_publication_url %>
+          </td>
+        </tr>
+      </table>
+
+
+    </div>
+  </div>
+
+</div>
