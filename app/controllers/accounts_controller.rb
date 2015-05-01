@@ -17,4 +17,8 @@ class AccountsController < ApplicationController
   def change_password
   end
 
+  def publications
+    @publications = current_user.publications
+  end
+
 end

@@ -1,0 +1,25 @@
+
+<div class="grid grid24 lead-space">
+  <%= render 'accounts_menu', selected: :publications %>
+
+  <div class="row">
+    <br>
+
+    <div class="col offset4 span16">
+      <h3>Publications</h3>
+      <table class="table">
+        <tr>
+          <th>Publication</th>
+
+        </tr>
+        <% current_user.publications.each do |publication| %>
+          <tr>
+            <td><%= link_to publication.name, publication.url %></td>
+          </tr>
+        <% end -%>
+      </table>
+
+    </div>
+  </div>
+
+</div>

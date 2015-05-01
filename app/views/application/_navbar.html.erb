@@ -5,12 +5,12 @@
   <% end -%>
 
   <div class="login-links">
-    <% if current_organization %>
-      <%= link_to current_organization.name, "/organization" %>
+    <% if current_user.try(:has_publications?) %>
+      <%= link_to "Publications", "/publications" %>
       &bull;
     <% end -%>
     <% if user_signed_in? %>
-      <%= link_to current_user.username, "/account" %>
+      <%= link_to "#{current_user.username} <b class=\"caret\"></b>".html_safe, "/account" %>
       &bull;
       <%= link_to('Sign out'.html_safe, destroy_user_session_path(return_to: request.fullpath), :method => :delete) %>
     <% else %>

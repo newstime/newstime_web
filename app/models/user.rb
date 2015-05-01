@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
   #has_and_belongs_to_many :editions
 
   has_many :subscriptions
+  has_many :publications
 
   def subscribe_to_publication(publication)
     subscription = subscriptions.find_or_create_by(publication: publication)
@@ -37,6 +38,14 @@ class User < ActiveRecord::Base
 
   def wallet
     super || create_wallet
+  end
+
+  def publications
+    Publication.all
+  end
+
+  def has_publications?
+    true
   end
 
 end

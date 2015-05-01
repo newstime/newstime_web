@@ -34,12 +34,20 @@ Newsstand::Application.routes.draw do
       end
     end
 
-
     resources :publications do
       member do
         put :subscribe
       end
     end
+
+
+    get 'account'                 => 'accounts#show'
+    get 'wallet'                  => 'accounts#wallet'   ,       as: :account_wallet
+    get 'purchases'               => 'accounts#purchases',       as: :account_purchases
+    get 'subscriptions'           => 'accounts#subscriptions',   as: :account_subscriptions
+    get 'account/publications'    => 'accounts#publications',    as: :account_publications
+    get 'change_password'         => 'accounts#change_password', as: :account_change_password
+    get 'update_info'             => 'accounts#update_info', as: :account_update_info
 
     scope ":publication_slug" do
       get ':edition_slug' => 'editions#show'
@@ -47,14 +55,6 @@ Newsstand::Application.routes.draw do
 
       post ':edition_slug' => 'editions#create'
     end
-
-    get 'account'         => 'accounts#show'
-    get 'wallet'          => 'accounts#wallet'   ,       as: :account_wallet
-    get 'purchases'       => 'accounts#purchases',       as: :account_purchases
-    get 'subscriptions'   => 'accounts#subscriptions',   as: :account_subscriptions
-    get 'change_password' => 'accounts#change_password', as: :account_change_password
-    get 'update_info'     => 'accounts#update_info', as: :account_update_info
-
 
     get "*path", :to => "pages#show"
 

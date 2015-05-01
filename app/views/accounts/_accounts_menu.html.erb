@@ -3,11 +3,12 @@
   <div class="col span24">
 
     <ul class="accounts-menu">
-      <li><%= link_to "Wallet", account_wallet_url %></li>
+      <li class="<%= "active" if selected == :wallet %>"><%= link_to "Wallet", account_wallet_url %></li>
       <li class="<%= "active" if selected == :purchases %>"><%= link_to "Purchases", account_purchases_url %> </li>
-      <li><%= link_to "Subscriptions", account_subscriptions_url %></li>
-      <li><%= link_to "Change Password", account_change_password_url %></li>
-      <li><%= link_to "Update Info", account_update_info_url %></li>
+      <li class="<%= "active" if selected == :subscriptions %>"><%= link_to "Subscriptions", account_subscriptions_url %></li>
+      <li class="<%= "active" if selected == :publications %>"><%= link_to "Publications", account_publications_url %></li>
+      <li class="<%= "active" if selected == :change_password %>"><%= link_to "Change Password", account_change_password_url %></li>
+      <li class="<%= "active" if selected == :update_info %>"><%= link_to "Update Info", account_update_info_url %></li>
     </ul>
 
   </div>

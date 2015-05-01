@@ -2,6 +2,10 @@ class PublicationsController < ApplicationController
 
   before_action :authenticate_user!, only: :subscribe
 
+  def index
+    @publications = current_user.publications
+  end
+
   def new
     @publication = Publication.new
   end
