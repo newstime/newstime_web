@@ -7,16 +7,23 @@
 
     <div class="col offset4 span16">
       <h3>Publications</h3>
+      <p>Manage your publications from this page.</p>
       <table class="table">
         <tr>
           <th>Publication</th>
+          <th></th>
 
         </tr>
         <% current_user.publications.each do |publication| %>
           <tr>
-            <td><%= link_to publication.name, publication.url %></td>
+            <td><%= link_to publication.name, publication_url(publication) %></td>
+            <td><%= link_to "Manage", manage_publication_url(publication.slug) %></td>
           </tr>
         <% end -%>
+        <tr>
+          <td><%= link_to "New Publication", new_publication_url %></td>
+          <td></td>
+        </tr>
       </table>
 
     </div>

@@ -22,4 +22,8 @@ class Publication < ActiveRecord::Base
     subscription_price
   end
 
+  def to_param
+    slug
+  end
+
 end
