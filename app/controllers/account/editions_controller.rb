@@ -4,7 +4,8 @@ module Account
     before_filter :authenticate_user!
 
     def new
-      @publication = current_user.publications.find_by_slug(params[:publication_id])
+      @publication = current_user.publications.find_by_slug(params[:id])
+      @edition = @publication.editions.build
     end
 
   end

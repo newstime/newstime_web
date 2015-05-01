@@ -15,12 +15,13 @@ Newsstand::Application.routes.draw do
 
     namespace 'admin' do
       resources :users
+      resources :publications
     end
 
     namespace 'account' do
       resources :publications do
         member do
-          get :new_edition
+          resources :editions
         end
       end
 
@@ -55,7 +56,6 @@ Newsstand::Application.routes.draw do
     get 'wallet'                  => 'accounts#wallet'   ,       as: :account_wallet
     get 'purchases'               => 'accounts#purchases',       as: :account_purchases
     get 'subscriptions'           => 'accounts#subscriptions',   as: :account_subscriptions
-    #get 'account/publications'    => 'accounts#publications',    as: :account_publications
     get 'change_password'         => 'accounts#change_password', as: :account_change_password
     get 'update_info'             => 'accounts#update_info', as: :account_update_info
 
