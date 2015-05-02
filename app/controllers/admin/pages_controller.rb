@@ -10,8 +10,7 @@ class Admin::PagesController < ApplicationController
     @stats[:user_count] = User.count
     @stats[:admin_count] = Admin.count
     @stats[:publication_count] = Publication.count
-
-
+    @stats[:news_organization_inquiries_count] = NewsOrganizationInquiry.count
 
   end
 
