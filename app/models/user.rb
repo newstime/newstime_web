@@ -40,10 +40,6 @@ class User < ActiveRecord::Base
     super || create_wallet
   end
 
-  def publications
-    Publication.all
-  end
-
   def has_publications?
     true
   end

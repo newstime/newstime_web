@@ -15,7 +15,7 @@
           </th>
 
         </tr>
-        <% current_user.publications.each do |publication| %>
+        <% @publications.each do |publication| %>
           <tr>
             <td><%= link_to publication.name, publication_url(publication) %></td>
             <td>
