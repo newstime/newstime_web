@@ -33,7 +33,7 @@
 
     <br>
     <p>
-      <%= render 'purchase_button' %>
+      <%= render 'purchase_button', edition: @edition %>
       or&nbsp;
       <%= link_to 'Continue to Content', @continue_to, class: "continue-link", onclick: "location.reload(); return false;" %>
     </p>
