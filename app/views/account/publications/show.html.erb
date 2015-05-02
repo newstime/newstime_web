@@ -1,5 +1,39 @@
-<div class="container lead-space">
-  <%= @publication.name %>
+
+<div class="grid grid24 lead-space">
+  <%= render 'accounts/accounts_menu', selected: :publications %>
+
+  <div class="row">
+
+    <br>
+
+    <div class="col offset4 span16">
+      <h3><%= link_to "Publications", account_publications_url %> &gt; <%= @publication.name %></h3>
+
+      <div class="publication-details">
+        <label>Name:</label> <%= @publication.name %>
+      </div>
+
+      <table class="table">
+        <tr>
+          <th>Created At:</th>
+          <th>Edition</th>
+
+        </tr>
+        <% @editions.each do |edition| %>
+          <tr>
+            <td><%= format_date edition.created_at %></td>
+            <td><%= link_to edition.name, edition.url %></td>
+          </tr>
+        <% end -%>
+
+        <tr>
+          <td>
+            <%= link_to "+ New Edition", new_account_edition_url(@publication) %>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
 
   <%#= link_to "Delete", account_publication_url(@publication), method: :delete, confirm: "Are you sure you wish to delete this publication?" %>
 </div>

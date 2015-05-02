@@ -6,6 +6,8 @@ class Edition < ActiveRecord::Base
 
   has_and_belongs_to_many :users
 
+  scope :most_recent, -> { order('publish_date DESC') }
+
   # Paperclip
   #has_attached_file :cover
 

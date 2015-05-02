@@ -9,14 +9,15 @@ module Account
 
     def show
       @publication = current_user.publications.find_by_slug(params[:id])
+      @editions = @publication.editions.most_recent.take(5)
     end
 
 
-    def destroy
-      @publication = current_user.publications.find_by_slug(params[:id])
-      @publication.destroy
-      redirect_to action: :index
-    end
+    #def destroy
+      #@publication = current_user.publications.find_by_slug(params[:id])
+      #@publication.destroy
+      #redirect_to action: :index
+    #end
 
     def new_edition
       @publication = current_user.publications.find_by_slug(params[:id])
