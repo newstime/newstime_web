@@ -1,9 +1,22 @@
+
+
 <div class="grid grid24 lead-space">
   <%= render 'accounts/accounts_menu', selected: :publications %>
 
+  <div class="row">
 
-  <h2><%= @publication.name %> &gt; New Edition</h2>
-  <input type="file"></input>
-  <br>
-  <input type="submit" class="btn" value="Upload Edition"></input>
+    <br>
+
+    <div class="col offset4 span16">
+      <h3>
+        <%= link_to "Publications", account_publications_path %> &gt;
+        <%= link_to @publication.name, account_publication_path(@publication) %> &gt;
+        New Edition</h3>
+
+      <input type="file"></input>
+      <br>
+      <input type="submit" class="btn" value="Upload Edition"></input>
+    </div>
+  </div>
+
 </div>
