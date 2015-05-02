@@ -1,0 +1,39 @@
+<div class="grid grid24 publication-profile">
+
+  <% if false %>
+
+    <h2 style="float:right;">
+      <% if @latest_edition.publish_date.to_date.today? %>
+        Today's Edition, <%= format_date @latest_edition.publish_date.to_date, :long %>
+      <% else %>
+        Latest Edition, <%= format_date @latest_edition.publish_date.to_date, :long %>
+      <% end -%>
+    </h2>
+
+    <h1><%= @publication.name %></h1>
+
+  <% end -%>
+
+  <% if @latest_edition %>
+    <div class="edition-display">
+      <div class="edition-buttons">
+        <% if show_download_links(@latest_edition) %>
+          <a class="btn btn-white" href="<%= @latest_edition.read_now_url %>">Read now</a>
+        <a class="btn" href="<%= @latest_edition.download_url %>"><i class="fa fa-cloud-download"></i> Download</a>
+      <% else -%>
+          <a class="btn btn-white" href="<%= @latest_edition.read_now_url %>">Read now</a>
+        <%= render 'purchase_button', edition: @latest_edition %>
+      <% end -%>
+      </div>
+      <%= link_to @latest_edition.read_now_url do %>
+        <img src="<%= @latest_edition.cover_url %>" class="cover"></img>
+      <% end -%>
+    </div>
+  <% end -%>
+</div>
+
+<div class="grid grid24 publication-profile">
+  <h2>Recent Editions</h2>
+</div>
+
+<%= render 'newsrack' %>

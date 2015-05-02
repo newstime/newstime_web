@@ -6,9 +6,11 @@ class PublicationsController < ApplicationController
     #@publications = current_user.publications
   #end
 
-
   def show
     @publication = Publication.find_by_slug(params[:id])
+    @editions = @publication.editions
+    @latest_edition = @publication.latest_edition
+    render 'publications/publication_profile'
   end
 
   def new
