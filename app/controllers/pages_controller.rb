@@ -16,6 +16,7 @@ class PagesController < ApplicationController
       case @page
       when PublicationProfile
         @editions = @page.publication.editions
+        @latest_edition = @page.publication.latest_edition
         render :publication_profile
       else
         render @page.class.to_s.underscore

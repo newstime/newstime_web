@@ -6,7 +6,7 @@
       <a class="btn" href="<%= @edition.download_url %>"><i class="fa fa-cloud-download"></i> Download</a>
     <% else -%>
         <a class="btn btn-white" href="main.html">Read now</a>
-      <%= render 'purchase_button' %>
+        <%= render 'purchase_button', edition: @edition %>
     <% end -%>
     </div>
     <%= link_to @edition.read_now_url do %>

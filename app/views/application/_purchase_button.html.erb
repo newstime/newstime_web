@@ -1,3 +1,3 @@
-<%= link_to purchase_edition_url(@edition), method: :put, class: 'btn purchase-button' do %>
-  Purchase for <%= format_currency @edition.price %>
+<%= link_to purchase_edition_url(edition), method: :put, class: 'btn purchase-button' do %>
+  Purchase for <%= format_currency edition.price %>
 <% end -%>

@@ -39,11 +39,15 @@ class Edition < ActiveRecord::Base
   end
 
   def download_url
-    "/downloads?edition_id=#{id}"
+    url + "/downloads?edition_id=#{id}"
   end
 
   def read_now_url
-    "main.html"
+    url + "/main.html"
+  end
+
+  def cover_url
+    url + "/cover.png"
   end
 
 end

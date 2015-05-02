@@ -26,4 +26,8 @@ class Publication < ActiveRecord::Base
     slug
   end
 
+  def latest_edition
+    editions.most_recent.first
+  end
+
 end

@@ -22,8 +22,11 @@ module FormatHelpers
     end
   end
 
-  def format_date(date)
-    date.strftime("%m/%d/%Y")
+  def format_date(date, format=:short)
+    case format
+    when :short then date.strftime("%m/%d/%Y")
+    when :long then date.strftime("%A, %B %e, %Y")
+    end
   end
 
   def format_size(size, units="Mb")
