@@ -10,4 +10,16 @@ class Admin::UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def update
+    @user = User.find(params[:id])
+    @user.update_attributes(user_params)
+    redirect_to :back
+  end
+
+private
+
+  def user_params
+    params.require(:user).permit(*User.attribute_names)
+  end
+
 end

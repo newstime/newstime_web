@@ -11,4 +11,8 @@ class Wallet < ActiveRecord::Base
     end
   end
 
+  def balance
+    read_attribute(:balance) || 0
+  end
+
 end

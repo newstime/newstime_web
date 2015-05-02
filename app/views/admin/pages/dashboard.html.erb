@@ -2,6 +2,7 @@
 
   <h1>Admin Dashboard</h1>
 
+
   <div class="widget">
     <h3>Users</h3>
     Total Users: <%= @stats[:user_count] %><br>
@@ -21,6 +22,12 @@
   <div class="widget">
     <h3>News Organization Inquiries</h3>
     Total News Organization Inquiries: <%= @stats[:news_organization_inquiries_count] %>
+  </div>
+
+
+  <div class="metric-number">
+    <%= @stats[:news_organization_inquiries_count] %>
+    <label>Total News Organization Inquiries</label>
   </div>
 
 </div>
