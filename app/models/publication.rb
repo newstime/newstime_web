@@ -30,4 +30,8 @@ class Publication < ActiveRecord::Base
     editions.most_recent.first
   end
 
+  # The newsrack of recent editions for the publication
+  belongs_to :recents_newsrack, class_name: 'Newsrack'
+
+
 end

@@ -10,6 +10,8 @@ class PublicationsController < ApplicationController
     @publication = Publication.find_by_slug(params[:id])
     @editions = @publication.editions
     @latest_edition = @publication.latest_edition
+
+    @newsrack = @publication.recents_newsrack
     render 'publications/publication_profile'
   end
 
@@ -20,6 +22,12 @@ class PublicationsController < ApplicationController
   def create
     @publication = Publication.create(publication_params)
     redirect_to account_publications_url
+  end
+
+  def update
+    @publication = Publication.find_by_slug(params[:id])
+    @publication.update_attributes(publication_params)
+    redirect_to :back
   end
 
   def subscribe

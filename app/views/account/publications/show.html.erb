@@ -17,6 +17,11 @@
 
       <%= link_to "Visit Site", publication_path(@publication) %>
 
+      <br>
+
+      <%= link_to "Update Recents Newsrack", publication_path(@publication, publication: { update_recents_newsrack: true }), method: :put %>
+
+
       <!-- Recent Edition -->
       <table class="table">
         <tr>
