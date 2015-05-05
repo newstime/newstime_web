@@ -25,11 +25,6 @@ class Edition < ActiveRecord::Base
     FileUtils.mkdir_p(share_path) unless share_path.exist?
   end
 
-  # TODO: Move to decorator...
-  def cover_url
-    "#{url}/cover.png"
-  end
-
   def url
     "#{publication.url}/#{slug}"
   end
@@ -51,7 +46,8 @@ class Edition < ActiveRecord::Base
   end
 
   def thumbnail_url
-    url + "/thumbnail.png"
+    #url + "/thumbnail.png"
+    cover_url
   end
 
 end

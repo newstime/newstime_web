@@ -10,7 +10,7 @@
       <% editions.each do |edition| %>
         <div class="edition">
           <a href="<%= edition.publication.slug %>/<%= edition.slug %>/">
-            <%#= image_tag edition.thumbnail_url %>
+            <%= image_tag edition.thumbnail_url %>
           </a>
         </div>
       <% end -%>
