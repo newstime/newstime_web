@@ -15,13 +15,14 @@
           </th>
 
         </tr>
-        <% @publications.each do |publication| %>
+        <% @publications.each do |pub| %>
           <tr>
-            <td><%= link_to publication.name, publication_url(publication) %></td>
             <td>
-              <%= link_to "Manage",       account_publication_url(publication) %> |
-              <%= link_to "Publish New Edition",  new_account_edition_url(publication) %>
-
+              <%= link_to pub.name, account_publication_url(pub) %>
+            </td>
+            <td>
+              <%= link_to "Visit Site", publication_url(pub) %> |
+              <%= link_to "+ Upload New Edition",  new_account_edition_url(pub) %>
             </td>
           </tr>
         <% end -%>

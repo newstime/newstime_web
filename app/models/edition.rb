@@ -50,4 +50,8 @@ class Edition < ActiveRecord::Base
     url + "/cover.png"
   end
 
+  def thumbnail_url
+    url + "/thumbnail.png"
+  end
+
 end

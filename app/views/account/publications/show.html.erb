@@ -13,6 +13,11 @@
         <label>Name:</label> <%= @publication.name %>
       </div>
 
+      <br>
+
+      <%= link_to "Visit Site", publication_path(@publication) %>
+
+      <!-- Recent Edition -->
       <table class="table">
         <tr>
           <th>Published</th>
@@ -32,6 +37,9 @@
           </td>
         </tr>
       </table>
+
+
+
     </div>
   </div>
 
