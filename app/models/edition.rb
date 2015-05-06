@@ -16,6 +16,10 @@ class Edition < ActiveRecord::Base
     Rails.root.join('share', 'editions', id.to_s)
   end
 
+  def thumbnails_path
+    share_path.join('thumbnails')
+  end
+
   def zip_share_path
     share_path.join(zip_name)
   end

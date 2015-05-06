@@ -30,7 +30,14 @@ class EditionBrowseController < ApplicationController
       end
     end
 
-    send_file "#{@edition.share_path}/extracted/#{params[:path]}.#{params[:format]}", disposition: 'inline'
+    case "#{params[:path]}.#{params[:format]}"
+    when "thumbnail.png"
+      path = "#{@edition.share_path}/thumbnails/#{params[:path]}.#{params[:format]}"
+      send_file path, disposition: 'inline'
+    else
+      send_file "#{@edition.share_path}/extracted/#{params[:path]}.#{params[:format]}", disposition: 'inline'
+    end
+
   end
 
   # Redirects to same url on www domain.
