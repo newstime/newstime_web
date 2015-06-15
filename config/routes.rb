@@ -3,7 +3,7 @@ Newsstand::Application.routes.draw do
   constraints subdomain: "www" do
 
     devise_for :users, :controllers => { :sessions => "sessions", :registrations => "registrations" }
-    devise_for :admins, :controllers => { :sessions => "sessions", :registrations => "registrations" }
+    devise_for :admins, :controllers => { :sessions => "sessions" }
 
     root to: "pages#home"
 
