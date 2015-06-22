@@ -2,6 +2,11 @@ body {
   background-color: #6b38a1;
   background-image: asset-url('purple-sky.png');
   margin: 0;
+
+  animation-name: scale;
+  animation-duration: 20s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
 }
 
 h2 {
@@ -20,6 +25,8 @@ h2 {
   background-color: white;
 }
 
+
+
 a.learn-more {
   font-family: 'Lovers Quarrel', cursive;
   font-size: 52pt;
@@ -32,5 +39,24 @@ a.learn-more {
   text-shadow: #094156 -1px 1px 3px;
 
   &:hover {
+  }
+
+}
+
+/* Animations */
+
+@keyframes scale {
+  0% {
+    background-position: 0 0;
+    background-size: 197%;
+  }
+
+  50% {
+    background-size: 200%;
+  }
+
+  100% {
+    background-position: 0 0;
+    background-size: 197%;
   }
 }
