@@ -16,7 +16,7 @@ h2 {
   width: 100%;
   text-align: center;
   font-size: 40pt;
-  margin: 2.5in 0 1.5in;
+  margin: 2.3in 0 1in;
   font-weight: 800;
 }
 
@@ -59,4 +59,19 @@ a.learn-more {
     background-position: 0 0;
     background-size: 197%;
   }
+}
+
+
+svg.logo {
+  fill: white;
+  margin: 1.5in auto -1.5in;
+  display: block;
+  /*border: 1px solid red;*/
+}
+
+
+svg.defs-only {
+    display:block; position: absolute;
+    height:0; width:0; margin: 0; padding: 0;
+    border: none; overflow: hidden;
 }
