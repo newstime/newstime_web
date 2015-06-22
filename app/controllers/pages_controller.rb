@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   def home
     #@newsrack = Newsrack.last
     #@editions = @newsrack.try(:editions)
+    render layout: false
   end
 
   def newsrack

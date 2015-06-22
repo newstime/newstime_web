@@ -1,9 +1,17 @@
-<%= render 'breadcrumbs' %>
-
-<%= render 'newsrack' if @newsrack %>
-
-<div class="container">
-  <div class="news-org-sign-up-promo">
-    <%= link_to "Are you a news organization?", new_news_organization_inquiry_path %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NEWSTIME</title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= stylesheet_link_tag    "home", media: "all" %>
+  <link href='http://fonts.googleapis.com/css?family=Alice|Megrim' rel='stylesheet' type='text/css'>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="headline-wrapper">
+    <%#= render 'newstime_pendulum_logo' %>
+    <h2>The Newspaper of Tomorrow</h2>
   </div>
-</div>
+</body>
+</html>

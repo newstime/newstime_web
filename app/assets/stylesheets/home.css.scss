@@ -1,0 +1,21 @@
+body {
+  background-color: #6b38a1;
+  background-image: asset-url('purple-sky.png');
+  margin: 0;
+}
+
+h2 {
+  font-family: 'Megrim', serif;
+  /*color: white;*/
+  color: #701db6;
+  width: 100%;
+  text-align: center;
+  font-size: 40pt;
+  margin: 3in 0;
+  font-weight: 800;
+}
+
+.headline-wrapper {
+  width: 100%;
+  background-color: white;
+}
