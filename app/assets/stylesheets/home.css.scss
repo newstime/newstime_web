@@ -86,15 +86,43 @@ svg.defs-only {
     border: none; overflow: hidden;
 }
 
-.paper-free {
+.newspaper-meets-web {
   background-color: #9ae4f9;
   /*background-image: asset_url('pink-dot2.png');*/
   background-position: center top;
   background-size: 10%;
   margin-top: 120px;
   width: 100%;
-  height: 1000px;
+  height: 850px;
   border-top: 5px solid white;
+  text-align: center;
+
+
+  h2 {
+    font-weight: 500;
+    color: white;
+    text-shadow: #0c9dc7 0 1px 5px;
+    font-size: 32pt;
+    margin-top: 1.2em;
+  }
+
+  p {
+    font-weight: 300;
+    color: white;
+
+    text-shadow: #0c9dc7 0 1px 5px;
+    width: 500px;
+    margin: 0 auto;
+    font-size: 16pt;
+    line-height: 1.4em;
+
+  }
+
+  .composer-screenshot {
+    width: 800px;
+    margin: -5px auto -10px;
+    display: block;
+  }
 
 }
 
