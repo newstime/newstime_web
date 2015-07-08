@@ -70,6 +70,7 @@ a.learn-more {
   margin: 0 auto;
   text-shadow: #094156 -1px 1px 3px;
   text-decoration: none;
+  outline: none;
 
   &:hover {
   }
@@ -240,6 +241,7 @@ svg.defs-only {
   margin: 30px auto;
   transition: all .2s;
   display: block;
+  outline: none;
 
   &:hover {
     border-top-color: rgba(98, 170, 192, 1);
