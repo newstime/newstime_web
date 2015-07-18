@@ -263,6 +263,8 @@ svg.defs-only {
   transition: all .2s;
   display: block;
   outline: none;
+  z-index: 3;
+  position: relative;
 
   &:hover {
     border-top-color: rgba(98, 170, 192, 1);
