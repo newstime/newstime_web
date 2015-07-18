@@ -232,6 +232,18 @@ svg.defs-only {
 
 }
 
+.pink-heart {
+  color: #ffcbf0;
+  /*color: #d9b1fa;*/
+  z-index: 0;
+}
+
+.heart-outline {
+  position: absolute;
+  z-index: 1;
+  text-shadow: none;
+}
+
 .arrow-down {
   width: 0;
   height: 0;
