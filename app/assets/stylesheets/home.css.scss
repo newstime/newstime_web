@@ -111,6 +111,7 @@ svg.defs-only {
 }
 
 .newspaper-meets-web {
+  position: relative;
   background-color: #9ae4f9;
   /*background-image: asset_url('pink-dot2.png');*/
   background-position: center top;
@@ -137,11 +138,12 @@ svg.defs-only {
     margin: 0 auto;
     font-size: 16pt;
     line-height: 1.4em;
-
   }
 
   .composer-screenshot {
     width: 800px;
+    position: relative;
+    z-index: 2;
     margin: -5px auto -10px;
     display: block;
     transition: all .2s ease-in-out;
@@ -242,6 +244,13 @@ svg.defs-only {
   position: absolute;
   z-index: 1;
   text-shadow: none;
+}
+
+.clouds {
+  position: absolute;
+  left: 30px;
+  top: 561px;
+  opacity: .5;
 }
 
 .arrow-down {
