@@ -1,0 +1,93 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+
+ * = require ./application/reset
+ * = require font_faces/raleway
+ * = require font_faces/alice
+ * = require font_faces/megrim
+ * = require font_faces/lovers_quarrel
+
+ */
+
+
+body {
+  margin: 0;
+  font-family: Raleway;
+}
+
+
+.main {
+  padding: 1px;
+  height: 800px;
+  background-color: #6b38a1;
+  background-image: asset-url('purple-sky.png');
+  animation-name: scale;
+  animation-duration: 20s;
+  animation-fill-mode: both;
+  /*animation-iteration-count: infinite;*/
+
+  h2 {
+    font-family: 'Megrim', serif;
+    /*color: white;*/
+    color: #701db6;
+    width: 100%;
+    text-align: center;
+    font-size: 40pt;
+    margin: 2.3in 0 1in;
+    font-weight: 800;
+  }
+}
+
+.headline-wrapper {
+  width: 100%;
+  background-color: white;
+}
+
+.newstime-twirl {
+  width: 755px;
+  position: relative;
+  display: block;
+  top: -100px;
+  left: -12px;
+  margin: 0 auto -275px;
+}
+
+
+/* Animations */
+
+@keyframes scale {
+  0% {
+    background-position: 0 0;
+    background-size: 197%;
+  }
+
+  50% {
+    background-size: 200%;
+  }
+
+  100% {
+    background-position: 0 0;
+    background-size: 197%;
+  }
+}
+
+
+svg.logo {
+  fill: white;
+  margin: 2in auto -1.5in;
+  display: block;
+}
+
+
+svg.defs-only {
+  display:block; position: absolute;
+  height:0; width:0; margin: 0; padding: 0;
+  border: none; overflow: hidden;
+}
