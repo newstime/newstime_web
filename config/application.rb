@@ -37,5 +37,9 @@ module Newsstand
 
     config.assets.paths << "#{Rails.root}/app/assets/fonts"
 
+    config.assets.precompile += [
+      "splash.css"
+    ]
+
   end
 end
