@@ -25,12 +25,15 @@ body {
 
 .main {
   padding: 1px;
-  height: 800px;
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
   background-color: #6b38a1;
   background-image: asset-url('purple-sky.png');
   animation-name: scale;
   animation-duration: 20s;
   animation-fill-mode: both;
+  min-width: 800px;
   /*animation-iteration-count: infinite;*/
 
   h2 {
@@ -42,6 +45,7 @@ body {
     font-size: 40pt;
     margin: 2.3in 0 1in;
     font-weight: 800;
+    padding: .1in 0;
   }
 }
 
@@ -51,13 +55,22 @@ body {
 }
 
 .newstime-twirl {
-  width: 755px;
+  width: 903px;
   position: relative;
   display: block;
-  top: -100px;
-  left: -12px;
+  top: -131px;
+  left: -14px;
   margin: 0 auto -275px;
 }
+
+svg.logo {
+  fill: white;
+  margin: 2.5in auto -1.5in;
+  display: block;
+  width: 524px;
+  padding: 0 189px;
+}
+
 
 
 /* Animations */
@@ -76,13 +89,6 @@ body {
     background-position: 0 0;
     background-size: 197%;
   }
-}
-
-
-svg.logo {
-  fill: white;
-  margin: 2in auto -1.5in;
-  display: block;
 }
 
 
