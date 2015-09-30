@@ -10,7 +10,6 @@
 <body>
 
 <div class="main">
-
   <svg class="defs-only" xmlns="http://www.w3.org/2000/svg">
     <symbol id="newstimelogo" >
       <g>
@@ -113,15 +112,20 @@
           c0.132,0.062,0.249,0.137,0.367,0.21C75.872,11.974,74.964,14.186,74.059,16.537z"/>
         </g>
       </symbol>
+
+
     </svg>
+
+
 
     <svg class="logo" viewBox="0 0 148 45" width="400" height="150">
       <use xlink:href="#newstimelogo" />
     </svg>
+
     <%= image_tag "newstime-twirl.png", class: 'newstime-twirl' %>
 
     <div class="headline-wrapper">
-      <h2>The Newspaper of Tomorrow</h2>
+      <%= render 'the_newspaper_of_tomorrow' %>
     </div>
   </div>
 </body>

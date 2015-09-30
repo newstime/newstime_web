@@ -52,6 +52,9 @@ body {
 .headline-wrapper {
   width: 100%;
   background-color: white;
+  margin-top: 2in;
+  display: block;
+  padding: 10px 0;
 }
 
 .newstime-twirl {
@@ -61,6 +64,12 @@ body {
   top: -131px;
   left: -14px;
   margin: 0 auto -275px;
+}
+
+.the-newspaper-of-tomorrow {
+  margin: 15px auto 10px;
+  width: 782px;
+  display: block;
 }
 
 svg.logo {
