@@ -28,12 +28,19 @@ class EditionsController < ApplicationController
       # Edition exists, receive updates
       @edition = Edition.find_by(slug: params[:edition_slug])
 
+      @edition.size = edition_params[:size].to_f
+      @edition.size_units = edition_params[:size_units].to_s
+
+      @edition.save
+
     else
       # Edition doesn't exist for slug, create new edition
       @edition = Edition.new(edition_params)
       @edition.publication = @publication
       @edition.zip_name = zip.original_filename # Copy zip name to the edition.
       @edition.slug = params[:edition_slug]
+      @edition.size = edition_params[:size].to_f
+      @edition.size_units = edition_params[:size_units].to_s
 
       @edition.save
     end
@@ -84,7 +91,7 @@ class EditionsController < ApplicationController
 private
 
   def edition_params
-    params.require(:edition).permit(:name, :publish_date, :price, :volume_label)
+    params.require(:edition).permit(:name, :publish_date, :price, :volume_label, :size, :size_units)
   end
 
 end
