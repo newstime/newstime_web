@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150505151706) do
+ActiveRecord::Schema.define(version: 20151002163127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -117,6 +117,7 @@ ActiveRecord::Schema.define(version: 20150505151706) do
     t.datetime "updated_at"
     t.float    "subscription_price"
     t.integer  "recents_newsrack_id"
+    t.string   "button_color"
   end
 
   add_index "publications", ["organization_id"], name: "index_publications_on_organization_id", using: :btree

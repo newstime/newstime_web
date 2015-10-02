@@ -18,8 +18,11 @@
     <div class="edition-display">
       <div class="edition-buttons">
         <% if show_download_links(@latest_edition) %>
-          <a class="btn btn-white" href="<%= @latest_edition.read_now_url %>">Read now</a>
-        <a class="btn" href="<%= @latest_edition.download_url %>"><i class="fa fa-cloud-download"></i> Download</a>
+          <a class="btn btn-white" href="<%= @latest_edition.read_now_url %>"
+            style="color: <%= @latest_edition.publication.button_color %>;" >Read now</a>
+          <a class="btn" href="<%= @latest_edition.download_url %>"
+            style="background-color: <%= @latest_edition.publication.button_color %>;">
+            <i class="fa fa-cloud-download"></i> Download</a>
       <% else -%>
           <a class="btn btn-white" href="<%= @latest_edition.read_now_url %>">Read now</a>
         <%= render 'purchase_button', edition: @latest_edition %>

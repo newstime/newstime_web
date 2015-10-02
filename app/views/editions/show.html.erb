@@ -2,8 +2,11 @@
   <div class="edition-display">
     <div class="edition-buttons">
       <% if show_download_links %>
-        <a class="btn btn-white" href="main.html">Read now</a>
-      <a class="btn" href="<%= @edition.download_url %>"><i class="fa fa-cloud-download"></i> Download</a>
+        <a class="btn btn-white" href="main.html"
+        style="color: <%= @edition.publication.button_color %>;">Read now</a>
+      <a class="btn" href="<%= @edition.download_url %>"
+        style="background-color: <%= @edition.publication.button_color %>;">
+          <i class="fa fa-cloud-download"></i> Download</a>
     <% else -%>
         <a class="btn btn-white" href="main.html">Read now</a>
         <%= render 'purchase_button', edition: @edition %>
@@ -16,7 +19,7 @@
 </div>
 
 
-<div class="basement">
+<div class="basement" style="background-color: <%= @edition.publication.button_color %>;">
   <div class="grid grid24">
     <div class="right-box">
       <label>Published:</label> <%= format_date @edition.publish_date.to_date %>
