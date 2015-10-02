@@ -2,6 +2,10 @@ class DownloadsController < ApplicationController
 
   def download
     @edition = Edition.find(params[:edition_id])
-    send_file @edition.zip_share_path, disposition: 'inline'
+
+    download_name = "#{@edition.publication.name}, #{@edition.name}.zip"
+    send_file @edition.zip_share_path,
+      filename: download_name,
+      disposition: 'inline'
   end
 end
