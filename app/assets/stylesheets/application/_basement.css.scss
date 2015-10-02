@@ -1,13 +1,16 @@
+@import 'variables';
+
+
 /* The basement of the show edition page */
 .basement {
-  background-color: #484c55;
-  color :#ccc;
+  background-color: $button-color;
+  color: ivory;
   padding: 20px 0 75px;
   font-weight: 100;
 
   h1, h2, h3 { margin: .5em 0 }
   a {
-    color: #ccc;
+    color: ivory;
   }
 
   .right-box {

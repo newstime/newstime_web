@@ -62,6 +62,8 @@ Newsstand::Application.routes.draw do
 
     scope ":publication_slug" do
       get ':edition_slug' => 'editions#show'
+
+      get ':edition_slug/downloads' => 'downloads#download'
       get ':edition_slug/*path' => 'edition_browse#browse'
 
       post ':edition_slug' => 'editions#create'
